@@ -21,65 +21,47 @@
                     <div class="col-lg-4">
                         <h3 class="text-white mb-3">Program</h3>
                         <ul>
-                            <li>
-                                <a href="{{ route('courses') }}" class="link text-white">
-                                    Try Out Online Nasional
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('courses') }}" class="link text-white">
-                                    Kedokteran Master Class
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('courses') }}" class="link text-white">
-                                    UTBK Master Class
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('courses') }}" class="link text-white">
-                                    STAN Master Class
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('courses') }}" class="link text-white">
-                                    Mandiri Master Class
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('courses') }}" class="link text-white">
-                                    Online Master Class
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('courses') }}" class="link text-white">
-                                    University Master Class
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('courses') }}" class="link text-white">
-                                    TOEFL Master Class
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('courses') }}" class="link text-white">
-                                    Privat Master Class
-                                </a>
-                            </li>
+                            <x-nav-link class="text-white" link="{{ route('courses') }}">
+                                Try Out Online Nasional
+                            </x-nav-link>
+                            <x-nav-link class="text-white" link="{{ route('courses') }}">
+                                Kedokteran Master Class
+                            </x-nav-link>
+                            <x-nav-link class="text-white" link="{{ route('courses') }}">
+                                UTBK Master Class
+                            </x-nav-link>
+                            <x-nav-link class="text-white" link="{{ route('courses') }}">
+                                STAN Master Class
+                            </x-nav-link>
+                            <x-nav-link class="text-white" link="{{ route('courses') }}">
+                                Mandiri Master Class
+                            </x-nav-link>
+                            <x-nav-link class="text-white" link="{{ route('courses') }}">
+                                Online Master Class
+                            </x-nav-link>
+                            <x-nav-link class="text-white" link="{{ route('courses') }}">
+                                University Master Class
+                            </x-nav-link>
+                            <x-nav-link class="text-white" link="{{ route('courses') }}">
+                                TOEFL Master Class
+                            </x-nav-link>
+                            <x-nav-link class="text-white" link="{{ route('courses') }}">
+                                Privat Master Class
+                            </x-nav-link>
                         </ul>
                     </div>
                     <div class="col-lg-4">
                         <h3 class="text-white mb-3">Resources</h3>
                         <ul>
-                            <li>
-                                <a href="#" class="link text-white">Download</a>
-                            </li>
-                            <li>
-                                <a href="#" class="link text-white">Promo</a>
-                            </li>
-                            <li>
-                                <a href="#" class="link text-white">Privacy Policy</a>
-                            </li>
+                            <x-nav-link class="text-white" link="#">
+                                Download
+                            </x-nav-link>
+                            <x-nav-link class="text-white" link="#">
+                                Promo
+                            </x-nav-link>
+                            <x-nav-link class="text-white" link="#">
+                                Privacy Policy
+                            </x-nav-link>
                         </ul>
                     </div>
                     <div class="col-lg-4">
