@@ -1,11 +1,11 @@
 @include('includes.frontend.auth-popup')
-<!-- footer -->
+
 <footer class="footer bg-green-dark py-5" id="kontak">
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
                 <a href="#" class="d-block mb-4">
-                    <img style="width:200px" 
+                    <img height="100px"
                     src="{{ url('frontend/img/logo.png')}}" alt="">
                 </a>
                 <p class="text-white m-0">
@@ -97,4 +97,3 @@
         </div>
     </div>
 </footer>
-<!-- footer -->
