@@ -130,7 +130,7 @@
 
 @endsection
 
-@section('before-footer')
+@section('component')
     
     <!-- subscribe_newsletter_Start -->
     <div class="subscribe_newsletter">

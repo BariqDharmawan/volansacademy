@@ -52,7 +52,7 @@
 						@if($configuration->type == 'image')
 							{!! Form::file('value', null, array('class' => 'form-control mb-2')) !!}
 						
-							<img style="width:100%" src="{{asset('config/'.$configuration->value)}}"></img>
+							<img style="width:100%" src="{{asset('config/'.$configuration->value)}}"/>
 							
 						@elseif($configuration->type == 'text')
 							{!! Form::text('value', null, array('class' => 'form-control mb-2')) !!}

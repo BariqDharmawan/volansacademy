@@ -1,15 +1,17 @@
 const mix = require('laravel-mix');
 
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
- |
- */
-
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css')
+    .styles([
+        'public/frontend/edumark/css/bootstrap.min.css',
+        'public/frontend/edumark/css/owl.carousel.min.css',
+        'public/frontend/edumark/css/magnific-popup.css',
+        'public/frontend/edumark/css/font-awesome.min.css',
+        'public/frontend/edumark/css/themify-icons.css',
+        'public/frontend/edumark/css/nice-select.css',
+        'public/frontend/edumark/css/flaticon.css',
+        'public/frontend/edumark/css/gijgo.css',
+        'public/frontend/edumark/css/animate.css',
+        'public/frontend/edumark/css/slicknav.css',
+        'public/frontend/edumark/css/style.css',
+    ], 'public/css/frontend.css');

@@ -499,7 +499,7 @@
 	</div>
 @endsection
 
-@section('before-footer')
+@section('component')
     
     <!-- subscribe_newsletter_Start -->
     <!--div class="subscribe_newsletter">
@@ -567,7 +567,7 @@
 
 @endsection
 
-@section('after-footer')
+@section('component')
     <!-- form itself end-->
     <form id="buy-form" class="white-popup-block mfp-hide popup-form" method="POST" action="{{ route('buy') }}">
         <div class="popup_box ">
