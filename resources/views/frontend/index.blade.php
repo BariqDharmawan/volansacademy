@@ -573,7 +573,7 @@ function lightbox_close_external(id='') {
 	
 	setInterval(function(){ $('.swiper-button-next2').click(); }, 5000);
 	
-	$('.main_menu').click(function(){
+	$('.nav__link').click(function(){
         $('.slicknav_btn ').click();
 	});
   </script>

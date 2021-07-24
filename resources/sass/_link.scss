@@ -1,0 +1,10 @@
+.link {
+    text-decoration: none;
+
+    &:hover {
+        color: currentColor;
+        text-decoration: underline;
+        text-decoration-color: currentColor;
+    }
+
+}

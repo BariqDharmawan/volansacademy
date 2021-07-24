@@ -1,0 +1,56 @@
+ul,
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bg-green-light,
+.nav {
+  background-color: #e7f2e8;
+}
+
+.bg-green-dark {
+  background-color: #0f4132;
+}
+
+.text-black {
+  color: #232323;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.nav {
+  height: 80px;
+}
+
+.nav__menu {
+  height: 100%;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  color: currentColor;
+  text-decoration: underline;
+  -webkit-text-decoration-color: currentColor;
+          text-decoration-color: currentColor;
+}
+
+.container {
+  width: 90%;
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
