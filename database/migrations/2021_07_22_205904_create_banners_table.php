@@ -15,10 +15,10 @@ class CreateBannersTable extends Migration
     {
         Schema::create('banners', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->string('image');
-            $table->string('link');
-            $table->string('m_image');
+            $table->string('link')->nullable();
+            $table->string('m_image')->nullable();
             $table->timestamps();
         });
     }

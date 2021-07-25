@@ -1,6 +1,7 @@
 const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/custom.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/custom.scss', 'public/css')
     .styles([
@@ -13,6 +14,5 @@ mix.js('resources/js/app.js', 'public/js')
         'public/frontend/edumark/css/flaticon.css',
         'public/frontend/edumark/css/gijgo.css',
         'public/frontend/edumark/css/animate.css',
-        'public/frontend/edumark/css/slicknav.css',
         'public/css/custom.css',
     ], 'public/css/frontend.css');

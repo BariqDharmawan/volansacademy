@@ -27,6 +27,8 @@
 
     <script src="{{ url('frontend/edumark/js/main.js') }}"></script>
 
+    <script src="{{ asset('js/custom.js') }}"></script>
+
     <script src="{{ url('js/sweetalert.min.js') }}"></script>
 
     <!-- login -->

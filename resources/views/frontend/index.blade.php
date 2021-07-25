@@ -1,98 +1,25 @@
 @extends('layouts.frontend')
 @section('title', 'Home')
 
-@push('styles')
-<link rel="stylesheet" href="{{ url('frontend/edumark/css/swiper-bundle.min.css') }}">
-<style>
-
-@media only screen and (min-width: 992px) {
-    .slider_area{
-        margin-top:95px;
-    }
-}
-</style>
-@endpush
-
 @section('content')
     <!-- slider_area_start -->
-    <div class="slider_area ">
-		<div class="single_slider d-flex align-items-center justify-content-center">
-			<div class="swiper-container swiper-container2 text-center">
-				<div class="swiper-wrapper">
-                    @foreach($banners as $banner)
-                    <div class="swiper-slide">
-                        <a href="{{ $banner->link }}">
-                            <img class="d-none d-lg-block" src="{{ url('banner/'.$banner->image) }}" alt="" style="width:100%">
-                            <img class="d-block d-lg-none" 
-                                @if($banner->m_image)
-                                    src="{{ url('banner/'.$banner->m_image) }}" 
-                                @else
-                                src="{{ url('banner/'.$banner->image) }}" 
-                                @endif
-                            alt="" style="width:100%">
-                        </a>
-					</div>
-                    @endforeach
-				</div>
-			
-				<!-- Add Pagination -->
-				<div class="swiper-pagination swiper-pagination2"></div>
-				<!-- Add Arrows -->
-				<div class="swiper-button-next swiper-button-next2"></div>
-				<div class="swiper-button-prev swiper-button-prev2"></div>
-			</div>
+	<div class="swiper-container slider-one-content-rounded-pagination text-center">
+        <div class="swiper-wrapper">
+            @foreach($banners as $banner)
+            <div class="swiper-slide">
+                <img src="{{ asset('banner/'.$banner->image) }}" alt="" width="100%" height="600px" />
+            </div>
+            @endforeach
         </div>
+        <div class="swiper-button-next">
+            <img src="{{ asset('images/icon/chevron_right_white_24dp.svg') }}" alt="" height="40px">
+        </div>
+        <div class="swiper-button-prev">
+            <img src="{{ asset('images/icon/chevron_left_white_24dp.svg') }}" alt="" height="40px">
+        </div>
+        <div class="swiper-pagination"></div>
     </div>
     <!-- slider_area_end -->
-
-    <!-- about_area_start -->
-    <!--div class="about_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-5 col-lg-6">
-                    <div class="single_about_info">
-                        <h3>Over 7000 Tutorials <br>
-                            from 20 Courses</h3>
-                        <p>Our set he for firmament morning sixth subdue darkness creeping gathered divide our let god
-                            moving. Moving in fourth air night bring upon you’re it beast let you dominion likeness open
-                            place day great wherein heaven sixth lesser subdue fowl </p>
-                        <a href="/courses" class="boxed_btn">Enroll a Course</a>
-                    </div>
-                </div>
-                <div class="col-xl-6 offset-xl-1 col-lg-6">
-                    <div class="about_tutorials">
-                        <div class="courses">
-                            <div class="inner_courses">
-                                <div class="text_info">
-                                    <span>20+</span>
-                                    <p> Courses</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="courses-blue">
-                            <div class="inner_courses">
-                                <div class="text_info">
-                                    <span>7638</span>
-                                    <p> Courses</p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="courses-sky">
-                            <div class="inner_courses">
-                                <div class="text_info">
-                                    <span>230+</span>
-                                    <p> Courses</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div-->
-    <!-- about_area_end -->
 
     <!-- popular_courses_start -->
     <div class="popular_courses mt-5">
@@ -111,7 +38,7 @@
             <div class="container">
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <div class="row">
+                            {{-- <div class="row">
 									@foreach($classes as $class)
                                     <div class="col-xl-4 col-lg-4 col-md-6">
                                         <div class="single_courses">
@@ -152,7 +79,7 @@
                                             <a href="#" class="boxed_btn_rev">More Courses</a>
                                         </div>
                                     </div-->
-							</div>
+							</div> --}}
                     </div>
                 </div>
             </div>
@@ -301,7 +228,7 @@
 
 	<!-- tutor -->
 	
-	<div class="our_courses" id="tutor" style="padding-bottom:0px">
+	{{-- <div class="our_courses" id="tutor" style="padding-bottom:0px">
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12">
@@ -336,9 +263,7 @@
 			<div class="swiper-button-next swiper-button-next1"></div>
 			<div class="swiper-button-prev swiper-button-prev1"></div>
 		  </div>
-		
-        
-    </div>
+    </div> --}}
 	
 	<!-- tutr end -->
 
@@ -414,21 +339,13 @@
     </div>
     <!-- subscribe_newsletter_end -->
 
-    <!-- our_latest_blog_start -->
-    <div class="our_latest_blog">
+    <section id="latest-blog">
         <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="section_title text-center mb-100">
-                        <h3 style="font-weight:bold">Kabar Terbaru Seleksi Kampus</h3>
-                    </div>
-                </div>
+            <div class="section_title text-center mb-100">
+                <h3 style="font-weight:bold">Kabar Terbaru Seleksi Kampus</h3>
             </div>
-		</div>
-			<!-- Swiper -->
-		<div class="lunchbox ">
-			<div class="swiper-container swiper-container3 text-center" style="width:80%">
-				<div class="swiper-wrapper"  >
+            <div class="swiper-container slider-number-pagination-three-slide">
+				<div class="swiper-wrapper">
 					@foreach($blogs as $blog)
 					<div class="swiper-slide">
 						<div class="thumb" style="width:100%;height:200px;background: url({{url('blog/'.$blog->featured_image.'?id='.str_replace(" ", "", $blog->updated_at))}}); background-size:cover">
@@ -448,17 +365,10 @@
 					</div>
 					@endforeach
 				</div>
-				<!-- Add Pagination -->
 				<div class="swiper-pagination swiper-pagination3"></div>
-				<!-- Add Arrows -->
-				
 			</div>
-			<div class="swiper-button-next swiper-button-next3"></div>
-			<div class="swiper-button-prev swiper-button-prev3"></div>
 		</div>
-        
-    </div>
-    <!-- our_latest_blog_end -->
+    </section>
 
 @endsection
     
@@ -517,62 +427,8 @@ function lightbox_close_external(id='') {
 })*/
 
 </script>
-<script src="{{ url('frontend/edumark/css/swiper-bundle.min.js') }}"></script>
 
 <script>
-	var jml = 3;
-	if(screen.width <= 576)
-		jml = 1;
-	var swiper = new Swiper('.swiper-container1', {
-      slidesPerView: jml,
-      spaceBetween: 0,
-      slidesPerGroup: jml,
-      loop: true,
-      loopFillGroupWithBlank: false,
-      pagination: {
-        el: '.swiper-pagination1',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next1',
-        prevEl: '.swiper-button-prev1',
-      },
-    });
-	
-	var swiper = new Swiper('.swiper-container2', {
-      slidesPerView: 1,
-      spaceBetween: 0,
-      slidesPerGroup: 1,
-      loop: true,
-      loopFillGroupWithBlank: true,
-      pagination: {
-        el: '.swiper-pagination2',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next2',
-        prevEl: '.swiper-button-prev2',
-      },
-    });
-	
-	var swiper = new Swiper('.swiper-container3', {
-      slidesPerView: jml,
-      spaceBetween: 15,
-      slidesPerGroup: jml,
-      loop: true,
-      loopFillGroupWithBlank: false,
-      pagination: {
-        el: '.swiper-pagination3',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next3',
-        prevEl: '.swiper-button-prev3',
-      },
-    });
-	
-	setInterval(function(){ $('.swiper-button-next2').click(); }, 5000);
-	
 	$('.nav__link').click(function(){
         $('.slicknav_btn ').click();
 	});
