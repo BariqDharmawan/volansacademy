@@ -408,34 +408,42 @@
     </div>
     <!-- subscribe_newsletter_end -->
 
-    <section id="latest-blog">
+    <section id="latest-blog" class="py-5">
         <div class="container">
             <div class="section_title text-center mb-100">
-                <h3 class="font-weight-bold text-black">Kabar Terbaru Seleksi Kampus</h3>
+                <h2 class="font-weight-bold mb-5 text-black">
+                    Kabar Terbaru Seleksi Kampus
+                </h2>
             </div>
-            <div class="swiper-container slider-number-pagination-three-slide">
-				<div class="swiper-wrapper">
-					@foreach($blogs as $blog)
-					<div class="swiper-slide">
-						<div class="thumb" style="width:100%;height:200px;background: url({{url('blog/'.$blog->featured_image.'?id='.str_replace(" ", "", $blog->updated_at))}}); background-size:cover">
-							<!--img style="width:100%; height:200px;" src="{{ url('blog/'.$blog->featured_image)}}" alt=""-->
-						</div>
-						<div class="content_blog">
-							<div class="date">
-								<p>{{ date('d/m/Y', strtotime($blog->created_at)) }}</p>
-							</div>
-							<div class="blog_meta">
-								<h3><a href="{{ url('article/'.$blog->id) }}">{{ strip_tags($blog->title) }}</a></h3>
-							</div>
-							<p class="blog_text" style="margin-bottom:50px">
-								{{ $blog->short_description }}
-							</p>
-						</div>
-					</div>
-					@endforeach
-				</div>
-				<div class="swiper-pagination swiper-pagination3"></div>
-			</div>
+            <div class="position-relative">
+                <div class="swiper-container slider-number-pagination-three-slide positin-static swiper-pagination--bottom-container">
+                    <div class="swiper-wrapper">
+                        @foreach($blogs as $blog)
+                        <div class="swiper-slide px-3">
+                            <div class="card h-full border-0 shadow">
+                                <img src="{{ asset('blog/'.$blog->featured_image) }}" class="card-img-top" alt="{{ $blog->title }}">
+                                <div class="card-body position-relative pt-5">
+                                    <time class="card-widget-date text-center">
+                                        {{ $blog->created_at->format('d') }} <br>
+                                        {{ $blog->created_at->format('M') }}
+                                    </time>
+                                    <h5 class="card-title font-weight-bold">
+                                        <a href="{{ url('article/'.$blog->id) }}"
+                                        class="text-black">
+                                            {{ Str::words($blog->title, 3) }}
+                                        </a>
+                                    </h5>
+                                    <p class="card-text">
+                                        {{ Str::words($blog->short_description, 10) }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                    <div class="swiper-pagination bottom-0"></div>
+                </div>
+            </div>
 		</div>
     </section>
 

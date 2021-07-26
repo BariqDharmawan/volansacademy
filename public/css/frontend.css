@@ -17794,6 +17794,7 @@ body {
 }
 
 .bg-green-dark,
+.card-widget-date,
 .nav-pills--dark-green-active .nav-link.active {
   background-color: #0f4132;
 }
@@ -17831,11 +17832,15 @@ body {
 }
 
 .left-0 {
-  left: 0;
+  left: 0 !important;
 }
 
 .right-0 {
-  right: 0;
+  right: 0 !important;
+}
+
+.bottom-0 {
+  bottom: 0 !important;
 }
 
 .nav {
@@ -17906,6 +17911,10 @@ body {
   align-items: center;
 }
 
+.swiper-pagination--bottom-container .swiper-wrapper {
+  padding-bottom: calc(20px + 30px);
+}
+
 .swiper-pagination__number {
   color: #232323;
   cursor: pointer;
@@ -17949,5 +17958,15 @@ body {
 
 .pattern-bottom-left--half-minus {
   transform: translateY(50%);
+}
+
+.card-widget-date {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  transform: translateY(-50%);
+  padding: 10px;
+  color: white;
+  font-weight: bold;
 }
 

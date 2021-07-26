@@ -10,6 +10,6 @@ $factory->define(Blog::class, function (Faker $faker) {
         'title' => $faker->sentence($nbWords = 4, $variableNbWords = true),
         'body' => $faker->text($maxNbChars = 200),
         'featured_image' => $faker->randomElement(['1.jpg', '2.jpg']),
-        'short_description' => $faker->text($maxNbChars = 20)
+        'short_description' => $faker->paragraph()
     ];
 });

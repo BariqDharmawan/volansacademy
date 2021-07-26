@@ -1,0 +1,12 @@
+.card {
+    &-widget-date {
+        position: absolute;
+        right: 20px;
+        top: 0;
+        transform: translateY(-50%);
+        padding: 10px;
+        color: white;
+        font-weight: bold;
+        @extend .bg-green-dark;
+    }
+}

@@ -44,6 +44,16 @@
         justify-content: center;
         align-items: center;
 
+        &--bottom-container {
+            .swiper-wrapper {
+                padding-bottom: calc(#{$shadow-slide} + 30px);
+            }
+            // .swiper-pagination {
+            //     bottom: 0 !important;
+            //     transform: translateY(100%);
+            // }
+        }
+
         &__number {
             color: $black;
             cursor: pointer;
