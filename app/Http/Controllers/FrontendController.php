@@ -16,6 +16,7 @@ use App\Cart;
 use App\Coupon;
 use App\Banner;
 use App\Advantage;
+use App\Helper;
 use Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\NewsletterConfirmMail;
@@ -64,14 +65,17 @@ class FrontendController extends Controller
 	
     public function index()
     {
-		$classes = Clas::where('inactive', 0)->orderBy('created_at', 'asc')->get();
+		$classes = Clas::where('inactive', 0)->take(3)->orderBy('created_at', 'asc')->get();
 		$blogs = Blog::latest()->get();
 		$videos = Video::where('inactive', 0)->limit(4)->get();
 		$testimonials = Testimonial::latest()->get();
 		$tutors = Tutor::latest()->get();
 		$banners = Banner::orderBy('created_at', 'asc')->get();
 		$advantages = Advantage::orderBy('created_at', 'asc')->get();
-		return view('frontend.index', compact('classes','blogs', 'videos', 'testimonials', 'tutors', 'banners', 'advantages'));
+
+        $companies = Helper::getJson('companies.json');
+
+		return view('frontend.index', compact('classes', 'blogs', 'videos', 'testimonials', 'tutors', 'banners', 'advantages', 'companies'));
     }
 	
 	public function course(Subclass $subclass)

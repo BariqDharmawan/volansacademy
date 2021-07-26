@@ -1,8 +1,6 @@
 @extends('layouts.frontend')
 @section('title', 'Home')
-@push('styles')
-<link rel="stylesheet" href="{{ url('frontend/edumark/css/swiper-bundle.min.css') }}">
-@endpush
+
 @section('content')
 	 <div class="bradcam_area breadcam_bg overlay2">
             <h3>{{ $class->name }}</h3>
@@ -148,7 +146,7 @@
 
 @endsection
 @push('scripts')
-<script src="{{ url('frontend/edumark/css/swiper-bundle.min.js') }}"></script>
+
 <script>
 var jml = 3;
 	if(screen.width <= 576)

@@ -11,7 +11,7 @@ class Clas extends Model
      *
      * @var array
      */
-	 protected $table = "classes";
+	protected $table = "classes";
     protected $fillable = [
         'name', 'description', 'banner', 'inactive', 'external_link'
     ];

@@ -1,7 +1,7 @@
 List component html [8h]
 1. navbar [25m] [done]
 2. logo app (for navbar and footer) [10m] [done]
-3. button (shape, rounded, long width) [20m]
+3. button (shape, rounded, long width) [20m] [done]
 4. slider big with pagination dots inside and nav slider [25m] [done]
 5. slider tabs [40m]
 6. card with action on bottom [20m]

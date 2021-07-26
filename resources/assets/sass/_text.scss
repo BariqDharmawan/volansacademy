@@ -1,0 +1,14 @@
+.text {
+    &-black {
+        color: $black;
+    }
+    &-white {
+        color: #fff;
+    }
+    &-purple {
+        color: $purple;
+    }
+    &-not-italic {
+        font-style: normal;
+    }
+}

@@ -1,8 +1,6 @@
 @extends('layouts.frontend')
 @section('title', 'Home')
-@push('styles')
-<link rel="stylesheet" href="{{ url('frontend/edumark/css/swiper-bundle.min.css') }}">
-@endpush
+
 @section('content')
 	<input type="hidden" id="subclass_id" value="{{ $subclass->id }}">
     <!-- bradcam_area_start -->
@@ -757,7 +755,6 @@
 	});
 </script>
 
-<script src="{{ url('frontend/edumark/css/swiper-bundle.min.js') }}"></script>
 <script>
 
 	@if($subclass->photos->count() > 0)

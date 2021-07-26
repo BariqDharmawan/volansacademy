@@ -1,10 +1,6 @@
 @extends('layouts.frontend')
 @section('title', 'Program Belajar')
 
-@push('styles')
-<link rel="stylesheet" href="{{ url('frontend/edumark/css/swiper-bundle.min.css') }}">
-@endpush
-
 @section('content')
 
     <!-- header-end -->
@@ -199,7 +195,7 @@
 
 @endsection
 @push('scripts')
-<script src="{{ url('frontend/edumark/css/swiper-bundle.min.js') }}"></script>
+
 <script>
 var jml = 3;
 	if(screen.width <= 576)

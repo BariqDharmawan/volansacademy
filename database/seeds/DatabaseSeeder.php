@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ConfigurationSeeder::class,
             BannerHomeSeeder::class,
-            BlogSeeder::class
+            BlogSeeder::class,
+            ClassSeeder::class
         ]);
     }
 }

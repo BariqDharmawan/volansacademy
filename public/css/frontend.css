@@ -17784,6 +17784,10 @@ ol {
   margin: 0;
 }
 
+body {
+  color: #232323;
+}
+
 .bg-green-light,
 .nav {
   background-color: #e7f2e8;
@@ -17799,6 +17803,18 @@ ol {
 
 .text-white {
   color: #fff;
+}
+
+.text-purple {
+  color: #5900e4;
+}
+
+.text-not-italic {
+  font-style: normal;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .nav {
@@ -17856,7 +17872,8 @@ ol {
 }
 
 .swiper-pagination__number {
-  color: black;
+  color: #232323;
+  cursor: pointer;
 }
 
 .swiper-pagination__number:not(:last-child) {
@@ -17874,6 +17891,7 @@ ol {
   height: 10px !important;
   border-radius: 50% !important;
   opacity: 0.5;
+  cursor: pointer;
 }
 
 .swiper-pagination__bullet:not(:last-child) {
