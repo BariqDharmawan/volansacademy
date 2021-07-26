@@ -3,6 +3,27 @@
     @include rounded(40px);
 }
 
+.slider-nav {
+    &-outside-horizontal {
+        .swiper-button {
+            &-next {
+                right: -20px;
+
+            }
+            &-prev {
+                left: -20px;
+            }
+        }
+    }
+    &-center-vertical {
+        [class*="swiper-button"] {
+            top: 50%;
+            transform: translateY(-50%);
+            margin: 0;
+        }
+    }
+}
+
 .swiper {
     &-button {
         &-next {

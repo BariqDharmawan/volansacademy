@@ -20,6 +20,7 @@ use App\Helper;
 use Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\NewsletterConfirmMail;
+use PHPUnit\TextUI\Help;
 
 class FrontendController extends Controller
 {
@@ -75,7 +76,9 @@ class FrontendController extends Controller
 
         $companies = Helper::getJson('companies.json');
 
-		return view('frontend.index', compact('classes', 'blogs', 'videos', 'testimonials', 'tutors', 'banners', 'advantages', 'companies'));
+        $categoriesClass = Helper::getJson('category-class.json');
+
+		return view('frontend.index', compact('classes', 'blogs', 'videos', 'testimonials', 'tutors', 'banners', 'advantages', 'companies', 'categoriesClass'));
     }
 	
 	public function course(Subclass $subclass)

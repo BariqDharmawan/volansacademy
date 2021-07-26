@@ -1,0 +1,9 @@
+$dirs: left, right;
+
+@each $dir in $dirs {
+    .#{$dir} {
+        &-0 {
+            #{$dir}: 0;
+        }
+    }
+}

@@ -44,21 +44,85 @@
         </div>
     </section>
 
-    <!-- popular_courses_start -->
-    <div class="bg-green-light py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="section_title text-center mb-1">
-                        <h2 class="font-weight-bold">Program Belajar</h2>
+    <section class="bg-green-light py-5 position-relative">
+        <img src="{{ asset('images/pattern-dot.png') }}" alt="" height="120px"
+        class="pattern-bottom-left pattern-pb-5 left-0">
+        <div class="container text-center">
+            <h2 class="font-weight-bold mb-5">
+                Program Belajar {{ config('app.name') }}
+            </h2>
+            
+            <div class="position-relative">
+                <div class="swiper-container slider-fifth-content text-center slider-nav-center-vertical slider-nav-outside-horizontal position-static">
+                    <ul class="nav flex-nowrap nav-pills swiper-wrapper nav-pills--dark-green-active" 
+                    id="categories-class-tab">
+                        @foreach ($categoriesClass as $category)
+                        <li class="swiper-slide nav-item d-flex align-items-center justify-content-center" role="presentation">
+                            <a class="nav-link text-black @if($loop->first) font-weight-bold active @endif" 
+                            id="pills-{{ Str::slug(strtolower($category->name)) }}-tab" 
+                            data-toggle="pill" href="#pills-{{ Str::slug(strtolower($category->name)) }}" role="tab"
+                            aria-controls="pills-{{ Str::slug(strtolower($category->name)) }}" aria-selected="@if($loop->first) true @else false @endif">
+                                {{ $category->name }}
+                            </a>
+                        </li>
+                        @endforeach
+                    </ul>
+                    @if (count($categoriesClass) > 5)
+                    <div class="swiper-button-next bg-transparent">
+                        <img src="{{ asset('images/icon/chevron_right_black_24dp.svg') }}" alt="" height="40px">
                     </div>
+                    <div class="swiper-button-prev bg-transparent">
+                        <img src="{{ asset('images/icon/chevron_left_black_24dp.svg') }}" alt="" height="40px">
+                    </div>
+                    @endif
                 </div>
             </div>
-        </div>
-        <div class="container text-center">
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <div class="row">
+
+            <div class="tab-content" id="categories-class-tabContent">
+                @foreach ($categoriesClass as $category)
+                <div class="tab-pane fade @if($loop->first) show active @endif"
+                id="pills-{{ Str::slug(strtolower($category->name)) }}" 
+                role="tabpanel" aria-labelledby="pills-{{ Str::slug(strtolower($category->name)) }}-tab">
+                    <div class="row justify-content-center flex-nowrap mx-0">
+                        @foreach ($classes as $class)
+                        <div class="col-lg-3 col-xl-4 
+                        @if($loop->iteration === 2) mx-xl-5 @endif">
+                            <div class="card h-full border-0 shadow">
+                                <img src="{{ asset('class/'.$class->banner) }}" 
+                                class="card-img-top" alt="">
+                                <div class="card-body text-left">
+                                    <h5 class="card-title mb-4">
+                                        {{ Str::words($class->name, 3) }}
+                                    </h5>
+                                    <ul>
+                                        <x-list-icon icon="calendar_today_black_24dp.svg" 
+                                        text="{{ $class->created_at->format('D, d M Y') }}" />
+                                        <x-list-icon icon="schedule_black_24dp.svg" 
+                                        text="{{ $class->created_at->format('H.i') }}" />
+                                        <x-list-icon icon="language_black_24dp.svg" 
+                                        text="Public" />
+                                        <x-list-icon icon="attach_money_black_24dp.svg" 
+                                        text="Rp. 3.500.000,-" />
+                                    </ul>
+                                </div>
+                                <div class="card-footer p-0 bg-transparent rounded-bottom overflow-hidden">
+                                    <a href="{{ route('subcourses', $class->id) }}" 
+                                        class="btn btn-warning w-100 rounded-0">
+                                        Click here for registration
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                @endforeach
+            </div>
+
+            
+            {{-- <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> --}}
+                    {{-- <div class="row">
                         @foreach($classes as $class)
                         <div class="col-xl-4 col-lg-4 col-md-6">
                             <div class="thumb">
@@ -84,12 +148,12 @@
                             </div>
                         </div>
                         @endforeach
-                    </div>
-                </div>
-            </div>
-            <a href="" class="btn btn-success bg-green-dark">Lihat semua</a>
+                    </div> --}}
+                {{-- </div>
+            </div> --}}
+            <a href="" class="btn btn-success bg-green-dark mt-4">Lihat semua</a>
         </div>
-    </div>
+    </section>
     <!-- popular_courses_end-->
 
 	<div id="fadeexternal" class="fadevideo" onClick="lightbox_close_external();"></div>
@@ -380,56 +444,56 @@
 	
 @push('scripts')
 <script>
-window.document.onkeydown = function(e) {
-  if (!e) {
-    e = event;
-  }
-  if (e.keyCode == 27) {
-    lightbox_close();
-  }
-}
+    window.document.onkeydown = function(e) {
+    if (!e) {
+        e = event;
+    }
+    if (e.keyCode == 27) {
+        lightbox_close();
+    }
+    }
 
-function lightbox_open(id='') {
-  var lightBoxVideo = document.getElementById("VisaChipCardVideo"+id);
-  document.getElementById('light'+id).style.display = 'block';
-  document.getElementById('fade'+id).style.display = 'block';
-  lightBoxVideo.play();
-}
+    function lightbox_open(id='') {
+    var lightBoxVideo = document.getElementById("VisaChipCardVideo"+id);
+    document.getElementById('light'+id).style.display = 'block';
+    document.getElementById('fade'+id).style.display = 'block';
+    lightBoxVideo.play();
+    }
 
-function lightbox_open_external(id='', url='') {
-	var video_wrapper = $('.youtube-video-place');
-	video_wrapper.html('<iframe allowfullscreen frameborder="0" class="embed-responsive-item" src="' + url + '"></iframe>');
-  
-	document.getElementById('lightexternal').style.display = 'block';
-	document.getElementById('fadeexternal').style.display = 'block';
-}
+    function lightbox_open_external(id='', url='') {
+        var video_wrapper = $('.youtube-video-place');
+        video_wrapper.html('<iframe allowfullscreen frameborder="0" class="embed-responsive-item" src="' + url + '"></iframe>');
+    
+        document.getElementById('lightexternal').style.display = 'block';
+        document.getElementById('fadeexternal').style.display = 'block';
+    }
 
-function lightbox_close(id='') {
-  var lightBoxVideo = document.getElementById("VisaChipCardVideo"+id);
-  document.getElementById('light'+id).style.display = 'none';
-  document.getElementById('fade'+id).style.display = 'none';
-  lightBoxVideo.pause();
-}
+    function lightbox_close(id='') {
+    var lightBoxVideo = document.getElementById("VisaChipCardVideo"+id);
+    document.getElementById('light'+id).style.display = 'none';
+    document.getElementById('fade'+id).style.display = 'none';
+    lightBoxVideo.pause();
+    }
 
-function lightbox_close_external(id='') {  
-	$('.embed-responsive-item').each(function(){
-	  this.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*')
-	});
-	document.getElementById('lightexternal').style.display = 'none';
-	document.getElementById('fadeexternal').style.display = 'none';
-}
+    function lightbox_close_external(id='') {  
+        $('.embed-responsive-item').each(function(){
+        this.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*')
+        });
+        document.getElementById('lightexternal').style.display = 'none';
+        document.getElementById('fadeexternal').style.display = 'none';
+    }
 
 
-/*$('.owl-carousel').owlCarousel({
-    loop:true,
-	items:1,
-    margin:10,
-    nav:false,
-	autoplay:true,
-    autoplayTimeout:5000,
-    autoplayHoverPause:true,
-	navText: ['&lt;','&gt;']
-})*/
+    /*$('.owl-carousel').owlCarousel({
+        loop:true,
+        items:1,
+        margin:10,
+        nav:false,
+        autoplay:true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:true,
+        navText: ['&lt;','&gt;']
+    })*/
 
 </script>
 

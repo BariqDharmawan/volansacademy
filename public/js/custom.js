@@ -12289,6 +12289,22 @@ var sliderNumberPagination = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](
     }
   }
 });
+var sliderNumberPaginationFifthSlide = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider-fifth-content', {
+  slidesPerView: 5,
+  slidesPerGroup: 5,
+  speed: 500,
+  spaceBetween: 0,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    bulletClass: 'swiper-pagination__bullet',
+    bulletActiveClass: 'swiper-pagination__bullet--active',
+    clickable: true
+  }
+});
 var sliderNumberPaginationThreeSlide = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider-number-pagination-three-slide', {
   slidesPerView: 3,
   slidesPerGroup: 3,

@@ -33,6 +33,23 @@ const sliderNumberPagination = new Swiper('.slider-number-pagination', {
     }
 })
 
+const sliderNumberPaginationFifthSlide = new Swiper('.slider-fifth-content', {
+    slidesPerView: 5,
+    slidesPerGroup: 5,
+    speed: 500,
+    spaceBetween: 0,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        bulletClass: 'swiper-pagination__bullet',
+        bulletActiveClass: 'swiper-pagination__bullet--active',
+        clickable: true
+    },
+})
+
 const sliderNumberPaginationThreeSlide = new Swiper('.slider-number-pagination-three-slide', {
     slidesPerView: 3,
     slidesPerGroup: 3,

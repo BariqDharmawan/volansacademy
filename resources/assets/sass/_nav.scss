@@ -8,4 +8,13 @@
         flex-grow: 1;
         align-items: center;
     }
+
+    &-pills {
+        &--dark-green-active {
+            .nav-link.active {
+                border-radius: 50px;
+                @extend .bg-green-dark;
+            }
+        }
+    }
 }

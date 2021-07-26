@@ -1,0 +1,13 @@
+.pattern-bottom-left {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    &.pattern-pb-5 {
+        bottom: 3rem;
+    }
+
+    &--half-minus {
+        transform: translateY(50%);
+    }
+}
