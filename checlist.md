@@ -14,7 +14,7 @@ List component html [8h]
 12. form button inside input [15m]
 13. plain box with solid or transparent color (if solid color, have rounded
     radius), title and desc [15m]
-14. card article [30m]
+14. card article [30m] [done]
 15. plain slider with 3 content and pagination [25m] [done]
 16. footer [10m] [done]
 17. simple link (white and black) [5m] [done]
