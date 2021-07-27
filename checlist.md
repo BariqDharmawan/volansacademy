@@ -29,7 +29,7 @@ List component html [8h]
 26. figure with video and caption [20m] [done]
 
 List task
-1. homepage [8h]
+1. homepage [8h] [onprogress]
 2. dashboard dihilangkan [5m]
 
 - hapus fitur keranjang karena tidak ada online payment hanya lewat wa saja [25m]
