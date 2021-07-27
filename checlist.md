@@ -38,7 +38,7 @@ List task
 
 - profi data diri dihilangkan [25m]
 
-- buat link ke whatsapp pada footer [20m]
+- buat link ke whatsapp pada footer [20m] [done]
 
 - kupon pada dashboard dihappus [25m]
 
@@ -49,6 +49,7 @@ List task
 
 - roles dipakai jangan dihapus
 
-- login admin tambahkan fitur login admin pada footer karena di navbar hanya kontak saja [10m]
+- login admin tambahkan fitur login admin pada footer karena di navbar hanya
+  kontak saja [10m] [done]
 
 - konfigurasi dihapus [15m]
