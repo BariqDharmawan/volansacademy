@@ -26,7 +26,7 @@ List component html [8h]
 23. rectangular banner (big height, normal height, small height) [25m]
 24. video with button on center [40m] [center]
 25. coutdown [45m]
-26. figure with video and caption [20m]
+26. figure with video and caption [20m] [done]
 
 List task
 1. homepage [8h]

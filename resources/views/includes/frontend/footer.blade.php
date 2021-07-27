@@ -89,6 +89,14 @@
                                         <span>089699505992</span>
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="javascript:void(0);"
+                                    class="link text-white" data-toggle="modal"
+                                    data-target="#login-popup">
+                                        <i class="flaticon-user"></i>
+                                        Login admin
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
