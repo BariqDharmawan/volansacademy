@@ -2,7 +2,6 @@
 @section('title', 'Home')
 
 @section('content')
-    <!-- slider_area_start -->
 	<div class="swiper-container slider-one-content-rounded-pagination text-center">
         <div class="swiper-wrapper">
             @foreach($banners as $banner)
@@ -11,15 +10,11 @@
             </div>
             @endforeach
         </div>
-        <div class="swiper-button-next">
-            <img src="{{ asset('images/icon/chevron_right_white_24dp.svg') }}" alt="" height="40px">
-        </div>
-        <div class="swiper-button-prev">
-            <img src="{{ asset('images/icon/chevron_left_white_24dp.svg') }}" alt="" height="40px">
-        </div>
+        
+        <x-swiper-next icon="chevron_right_white_24dp.svg" />
+        <x-swiper-prev icon="chevron_left_white_24dp.svg" />
         <div class="swiper-pagination"></div>
     </div>
-    <!-- slider_area_end -->
 
     <section class="py-5 bg-green-light">
         <div class="container">
@@ -46,9 +41,9 @@
 
     <section class="bg-green-light py-5 position-relative">
         <img src="{{ asset('images/pattern-dot.png') }}" alt="" height="120px"
-        class="pattern-bottom-left pattern-pb-5 left-0">
+        class="pattern-bottom-left pattern-pb-5 left-0" draggable="false">
         <div class="container text-center">
-            <h2 class="font-weight-bold mb-5">
+            <h2 class="font-weight-bold mb-5 text-center">
                 Program Belajar {{ config('app.name') }}
             </h2>
             
@@ -68,12 +63,10 @@
                         @endforeach
                     </ul>
                     @if (count($categoriesClass) > 5)
-                    <div class="swiper-button-next bg-transparent">
-                        <img src="{{ asset('images/icon/chevron_right_black_24dp.svg') }}" alt="" height="40px">
-                    </div>
-                    <div class="swiper-button-prev bg-transparent">
-                        <img src="{{ asset('images/icon/chevron_left_black_24dp.svg') }}" alt="" height="40px">
-                    </div>
+                    <x-swiper-next class="bg-transparent" 
+                    icon="chevron_right_black_24dp.svg" />
+                    <x-swiper-prev class="bg-transparent" 
+                    icon="chevron_left_black_24dp.svg" />
                     @endif
                 </div>
             </div>
@@ -154,106 +147,46 @@
             <a href="" class="btn btn-success bg-green-dark mt-4">Lihat semua</a>
         </div>
     </section>
-    <!-- popular_courses_end-->
-
-	<div id="fadeexternal" class="fadevideo" onClick="lightbox_close_external();"></div>
-	<div id="lightexternal" class="lightvideoexternal">
-	<div href="#" class="boxclose" id="boxclose" onclick="lightbox_close_external();"></div>
-		<div class="youtube-video-place embed-responsive embed-responsive-4by3 "></div>
-	</div>
-	@foreach($videos as $video)
-			@if($video->external_url == "")
-			<div id="fade{{ $video->id }}" class="fadevideo" onClick="lightbox_close({{ $video->id }});"></div>
-			<div id="light{{ $video->id }}" class="lightvideo">
-			
-				<div href="#" class="boxclose" id="boxclose{{ $video->id }}" onclick="lightbox_close({{ $video->id }});"></div>
-				<video id="VisaChipCardVideo{{ $video->id }}" style="width: 100%;height: auto;border:0" controls>
-				  <source src="{{ url('video/'.$video->video) }}" type="video/mp4">
-				</video>
-			</div>
-			@endif
-	@endforeach
-	<!-- video start -->
-    <div class="our_courses" style="padding-top:0px" id="alumni">
+    
+    <section id="cerita-alumni" class="py-5">
+        <h2 class="font-weight-bold mb-5 text-center">
+            Cerita Alumni Volans Education
+        </h2>
         <div class="container">
             <div class="row">
-                <div class="col-xl-12">
-                    <div class="section_title text-center mb-100">
-                        <h3 style=" font-weight:bold">Cerita Alumni Volans Education</h3>
-                        <!--p>Your domain control panel is designed for ease-of-use and <br>
-                            allows for all aspects of your domains.
-                        </p-->
-                    </div>
-                </div>
-            </div>
-			
-			
-			
-			<div class="row">
-				@foreach($videos as $video)
-				<div class="col-xl-3 col-md-6 col-lg-6">
-                    <div class="single_course text-center" style="padding:0px;border:none">
-						@if($video->external_url == "")
-						<div onclick="lightbox_open({{ $video->id }});" class="lightbox_open" style="background: url({{asset('videoimage/'.$video->image.'?id='.str_replace(" ", "", $video->updated_at))}}); background-size:cover">
-						@else
-						<div onclick="lightbox_open_external({{ $video->id }}, '{{ $video->external_url }}?enablejsapi=1');" class="lightbox_open" style="background: url({{asset('videoimage/'.$video->image.'?id='.str_replace(" ", "", $video->updated_at))}}); background-size:cover">
-						@endif
-							<div class="overlayvideo">
-							  <div class="iconvideo" title="Play cerita">
-								<i class="fa fa-play"></i>
-							  </div>
-							</div>
-						</div>
-						<!-- judul video -->
-						<div class="text-center">{{ $video->name }}</div>
-					</div>
-                </div>
-				@endforeach
-            </div>
-        </div>
-    </div>
-    <!-- video end -->
-
-    <!-- testimonial_area_start -->
-    <div class="testimonial_area d-none d-sm-block d-md-block d-lg-block" id="testimoni" style="background-image:url(config/{{ str_replace(' ', '%20', $config['testimonial banner']) }})">
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-12">
-					<div class="section_title text-center mb-100">
-						<h3 style="color:white; font-weight:bold">Jadilah Pemenang Bersama Volans</h3>
-					</div>
-				</div>
-			</div>
-		</div>
-        <div class="testmonial_active owl-carousel">
-			@foreach($testimonials as $testi)
-			<div class="single_testmoial">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="testmonial_text text-center">
-                                <div class="author_img">
-                                    <img src="{{ url('images/'.$testi->image.'?id='.$testi->updated_at)}}" alt="" style="width:200px;height:200px;border-radius: 50%;">
-                                </div>
-								<br>
-								<span style="font-family:'Poppins', sans-serif; color:{{$testi->warna}};font-size:{{$testi->ukuran}};text-align:{{$testi->alignment}}"><strong>{{ $testi->name }}</strong></span>
-								<br>
-								<span style="font-family:'Poppins', sans-serif;color:{{$testi->warna}};font-size:{{$testi->ukuran}};text-align:{{$testi->alignment}}"><strong>{{ $testi->from }}</strong></span>
-                                <p style="font-family:'Poppins', sans-serif;color:{{$testi->warna}};font-size:{{$testi->ukuran}};text-align:{{$testi->alignment}}" >
-								{!! nl2br($testi->testimonial) !!}
-                                </p>
-                                <!--span>- Jquileen</span-->
-                            </div>
+                @foreach ($videos as $story)
+                <div class="col-lg-3">
+                    <div class="card bg-transparent h-full border-0 shadow-none">
+                        <div class="position-relative play-popup rounded overflow-hidden">
+                            <img src="{{ asset('blog/1.jpg') }}" class="card-img-top" 
+                            alt="{{ $story->name }}"/>
+                            <div class="play-popup__overlay"></div>
+                            <a href="javascript:void(0);" class="play-popup__btn"
+                            data-toggle="modal" 
+                            data-target="#play-popup-{{ Str::slug(
+                                strtolower($story->name)
+                            ) }}" 
+                            data-youtube-video="">
+                                <img src="{{ asset('images/btn-play.png') }}" 
+                                alt="" height="90px"/>
+                            </a>
+                        </div>
+                        <div class="card-body px-0 text-center">
+                            <h5 class="card-title font-weight-bold
+                            card-title--elipsis-one-row">
+                                {{ $story->name }}
+                            </h5>
+                            <p class="card-text">
+                                {{ Str::words($story->description, 8) }}
+                            </p>
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
-			@endforeach
-            
-            
         </div>
-    </div>
-    <!-- testimonial_area_start -->
+    </section>
+
     <div class="testimonial_area d-block d-sm-none d-md-none d-lg-none" id="testimoni2" style="background-image:url(config/{{ str_replace(' ', '%20', $config['testimonial banner hape']) }})">
 		<div class="container">
 			<div class="row">
@@ -406,12 +339,11 @@
             </div>
         </div>
     </div>
-    <!-- subscribe_newsletter_end -->
 
     <section id="latest-blog" class="py-5">
         <div class="container">
             <div class="section_title text-center mb-100">
-                <h2 class="font-weight-bold mb-5 text-black">
+                <h2 class="font-weight-bold mb-5 text-black text-center">
                     Kabar Terbaru Seleksi Kampus
                 </h2>
             </div>
@@ -447,6 +379,26 @@
 		</div>
     </section>
 
+@endsection
+
+@section('component')
+    @foreach ($videos as $story)
+    <div class="modal fade" id="play-popup-{{ Str::slug(strtolower($story->name)) }}" 
+    tabindex="-1" aria-hidden="true"
+    data-backdrop="static" data-keyboard="false" tabindex="-1">
+        <button type="button" class="close close--top-right-popup" data-dismiss="modal" aria-label="Close">
+            <img src="{{ asset('images/icon/close_white_24dp.svg') }}" alt="" srcset="">
+        </button>
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content p-0">
+                <div class="modal-body p-0 d-flex">
+                    <iframe width="100%" src="https://www.youtube.com/embed/TranVlEwQqw?autoplay=1&origin={{ config('app.url') }}" 
+                    frameBorder="0" height="500" class="modal-body__embed"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endforeach
 @endsection
     
 	
@@ -490,18 +442,6 @@
         document.getElementById('lightexternal').style.display = 'none';
         document.getElementById('fadeexternal').style.display = 'none';
     }
-
-
-    /*$('.owl-carousel').owlCarousel({
-        loop:true,
-        items:1,
-        margin:10,
-        nav:false,
-        autoplay:true,
-        autoplayTimeout:5000,
-        autoplayHoverPause:true,
-        navText: ['&lt;','&gt;']
-    })*/
 
 </script>
 

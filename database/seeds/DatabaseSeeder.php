@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
             ConfigurationSeeder::class,
             BannerHomeSeeder::class,
             BlogSeeder::class,
-            ClassSeeder::class
+            ClassSeeder::class,
+            VideoSeeder::class
         ]);
     }
 }

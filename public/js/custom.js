@@ -12249,6 +12249,25 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/assets/js/components/popup-video.js":
+/*!*******************************************************!*\
+  !*** ./resources/assets/js/components/popup-video.js ***!
+  \*******************************************************/
+/*! exports provided: autoPlayYouTubeModal */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "autoPlayYouTubeModal", function() { return autoPlayYouTubeModal; });
+function autoPlayYouTubeModal() {
+  var trigger = $("body").find('[data-toggle="modal"]');
+  trigger.click(function () {
+    var theModal = $(this).data("target");
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/assets/js/components/slider.js":
 /*!**************************************************!*\
   !*** ./resources/assets/js/components/slider.js ***!
@@ -12337,7 +12356,10 @@ var sliderNumberPaginationThreeSlide = new swiper__WEBPACK_IMPORTED_MODULE_0__["
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/slider */ "./resources/assets/js/components/slider.js");
+/* harmony import */ var _components_popup_video__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/popup-video */ "./resources/assets/js/components/popup-video.js");
 
+
+_components_popup_video__WEBPACK_IMPORTED_MODULE_1__["autoPlayYouTubeModal"]();
 
 /***/ }),
 

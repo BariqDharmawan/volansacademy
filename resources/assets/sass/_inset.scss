@@ -1,4 +1,4 @@
-$dirs: left, right, bottom;
+$dirs: top, left, right, bottom;
 
 @each $dir in $dirs {
     .#{$dir} {

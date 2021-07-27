@@ -9,4 +9,11 @@
         font-weight: bold;
         @extend .bg-green-dark;
     }
+    &-title {
+        &--elipsis-one-row {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
 }
