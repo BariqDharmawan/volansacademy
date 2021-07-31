@@ -52,3 +52,18 @@ Alamat Sekarang :
 Universitas :
 Jurusan :
 Semester :
+
+# Cara Install Di Local
+
+## Requirement 
+1. Install PHP 7.x (kalau windows, install xampp aja https://www.apachefriends.org/xampp-files/7.3.29/xampp-windows-x64-7.3.29-1-VC15-installer.exe)
+2. Install Composer (https://getcomposer.org/doc/00-intro.md) 
+3. Install Node JS (https://nodejs.org/en/download)
+4. Buka terminal / cmd, msk ke directory C:/xampp/htdocs/volansacademy 
+5. Jalankan composer install 
+7. Duplikat file .env.example dan rename menjadi .env 
+8. Buat database mysql bernama 'volansacademy' di PHPMYADMIN atau di database manager apapun
+   database yang barusan dibuat
+9. Jalankan php artisan key:generate 
+10. Jalankan php artisan migrate --seed 
+11. Jalankan php artisan serve dan buka localhost:8000 di browser
