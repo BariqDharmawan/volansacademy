@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+require('laravel-mix-artisan-serve');
 
 mix.js('resources/assets/js/app.js', 'public/js')
     .js('resources/assets/js/custom.js', 'public/js')
@@ -15,4 +16,5 @@ mix.js('resources/assets/js/app.js', 'public/js')
         'public/frontend/edumark/css/gijgo.css',
         'public/frontend/edumark/css/animate.css',
         'public/css/custom.css',
-    ], 'public/css/frontend.css');
+    ], 'public/css/frontend.css')
+    .serve()

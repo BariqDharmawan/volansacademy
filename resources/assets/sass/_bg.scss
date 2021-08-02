@@ -1,10 +1,22 @@
 .bg {
     &-green {
         &-light {
-            background-color: #e7f2e8;
+            background-color: $green-light;
         }
         &-dark {
-            background-color: #0f4132;
+            background-color: $green-dark;
+        }
+        &-normal-to-darker {
+            background: linear-gradient(
+                180deg, rgba(21,113,90,1) 0%, rgba(14,67,52,1) 100%
+            );
+        }
+    }
+    &-white {
+        &-to-green-light {
+            background: linear-gradient(
+                180deg, rgba(255,255,255,1) 46%, rgba(103,160,115,0.5) 100%
+            );
         }
     }
 }

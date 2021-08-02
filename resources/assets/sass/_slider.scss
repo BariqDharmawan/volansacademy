@@ -25,6 +25,18 @@
 }
 
 .swiper {
+    &-nav {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        height: 30px;
+
+        &--bottom-right {
+            transform: translateY(100%);
+            right: 20px;
+            bottom: 15px;
+        }
+    }
     &-button {
         &-next {
             &::after {
@@ -48,10 +60,6 @@
             .swiper-wrapper {
                 padding-bottom: calc(#{$shadow-slide} + 30px);
             }
-            // .swiper-pagination {
-            //     bottom: 0 !important;
-            //     transform: translateY(100%);
-            // }
         }
 
         &__number {

@@ -2,4 +2,19 @@
     &-full {
         height: 100%;
     }
+    &-auto {
+        height: auto;
+    }
+}
+
+.w {
+    &-auto {
+        width: auto !important;
+    }
+}
+
+.fg {
+    &-1 {
+        flex-grow: 1;
+    }
 }

@@ -1,0 +1,36 @@
+.arrow {
+    width: 40px;
+    display: flex;
+
+    &--left {
+        transform: rotate(180deg);
+    }
+
+    &--hover-green-lightning {
+        &:hover {
+            .point {
+                border-left-color: $green-lightning;
+            }
+            .line {
+                background-color: $green-lightning;
+            }
+        }
+    }
+}
+
+.line {
+    margin-top: 8px;
+    width: 90px;
+    background-color: $black;
+    height: 4px;
+    float: left;
+}
+
+.point {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid $black;
+    float: right;
+}

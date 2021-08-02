@@ -12343,6 +12343,29 @@ var sliderNumberPaginationThreeSlide = new swiper__WEBPACK_IMPORTED_MODULE_0__["
     }
   }
 });
+var sliderThreeContentArrowPagination = document.querySelectorAll('.slider-arrow-pagination-three-slide');
+sliderThreeContentArrowPagination.forEach(function (slider, i) {
+  var sliderId = '#' + slider.id;
+  var sliderArrowPaginationThreeSlide = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderId, {
+    slidesPerView: 3,
+    slidesPerGroup: 3,
+    speed: 500,
+    spaceBetween: 150,
+    navigation: {
+      nextEl: sliderId + ' .swiper-button-next',
+      prevEl: sliderId + ' .swiper-button-prev'
+    },
+    pagination: {
+      el: sliderId + " .swiper-pagination",
+      clickable: true,
+      bulletClass: 'swiper-pagination__arrow',
+      bulletActiveClass: 'swiper-pagination__arrow--active',
+      renderBullet: function renderBullet(index, className) {
+        return '<span class="' + className + '">' + (index + 1) + "</span>";
+      }
+    }
+  });
+});
 
 /***/ }),
 

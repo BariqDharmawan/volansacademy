@@ -72,7 +72,7 @@ class FrontendController extends Controller
 		$testimonials = Testimonial::latest()->get();
 		$tutors = Tutor::latest()->get();
 		$banners = Banner::orderBy('created_at', 'asc')->get();
-		$advantages = Advantage::orderBy('created_at', 'asc')->get();
+		$advantages = Advantage::take(6)->get();
 
         $companies = Helper::getJson('companies.json');
 

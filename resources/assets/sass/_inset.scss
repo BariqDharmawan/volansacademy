@@ -5,5 +5,8 @@ $dirs: top, left, right, bottom;
         &-0 {
             #{$dir}: 0 !important;
         }
+        &-10 {
+            #{$dir}: #{10 * 4px} !important;
+        }
     }
 }

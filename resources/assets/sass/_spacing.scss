@@ -1,1 +1,30 @@
 $shadow-slide: 20px;
+
+.m {
+    &t {
+        &-n {
+            @for $i from 5 through 5 {
+                &#{$i} {
+                    margin-top: -#{$i * .6rem};
+                }
+            }
+        }
+    }
+    &r {
+        @for $i from 10 through 10 {
+            &-#{$i} {
+                margin-right: #{$i * .6rem} !important;
+            }
+        }
+    }
+}
+
+.z {
+    &-n {
+        @for $i from 1 through 1 {
+            &#{$i} {
+                z-index: -#{$i};
+            }
+        }
+    }
+}

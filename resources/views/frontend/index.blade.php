@@ -6,7 +6,8 @@
         <div class="swiper-wrapper">
             @foreach($banners as $banner)
             <div class="swiper-slide">
-                <img src="{{ asset('banner/'.$banner->image) }}" alt="" width="100%" height="600px" />
+                <img src="{{ asset('banner/'.$banner->image) }}" alt=""
+                width="100%" height="600px" />
             </div>
             @endforeach
         </div>
@@ -148,7 +149,7 @@
         </div>
     </section>
     
-    <section id="cerita-alumni" class="py-5">
+    <section id="cerita-alumni" class="py-3">
         <h2 class="font-weight-bold mb-5 text-center">
             Cerita Alumni Volans Education
         </h2>
@@ -160,7 +161,7 @@
                         <div class="position-relative play-popup rounded overflow-hidden">
                             <img src="{{ asset('blog/1.jpg') }}" class="card-img-top" 
                             alt="{{ $story->name }}"/>
-                            <div class="play-popup__overlay"></div>
+                            <div class="overlay overlay--black-point-3"></div>
                             <a href="javascript:void(0);" class="play-popup__btn"
                             data-toggle="modal" 
                             data-target="#play-popup-{{ Str::slug(
@@ -187,113 +188,118 @@
         </div>
     </section>
 
-    <div class="testimonial_area d-block d-sm-none d-md-none d-lg-none" id="testimoni2" style="background-image:url(config/{{ str_replace(' ', '%20', $config['testimonial banner hape']) }})">
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-12">
-					<div class="section_title text-center mb-100">
-						<h3 style="color:white; font-weight:bold">Jadilah Pemenang Bersama Volans</h3>
-					</div>
-				</div>
-			</div>
-		</div>
-        <div class="testmonial_active owl-carousel">
-			@foreach($testimonials as $testi)
-			<div class="single_testmoial">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="testmonial_text text-center">
-                                <div class="author_img">
-                                    <img src="{{ url('images/'.$testi->image.'?id='.$testi->updated_at)}}" alt="" style="width:200px;height:200px;border-radius: 50%;">
+    <div class="bg-white-to-green-light">
+        <section id="testimoni" class="py-3">
+            <div class="container">
+                <h2 class="font-weight-bold text-center mb-5">
+                    Jadilah Pemenang Bersama Volans
+                </h2>
+    
+                <div class="swiper-container slider-arrow-pagination-three-slide pb-5" id="slider-testi">
+                    <div class="swiper-wrapper align-items-stretch">
+                        @foreach($testimonials as $testi)
+                        <div class="swiper-slide h-auto d-flex flex-column align-items-center">
+                            <img src="{{ asset('images/' . $testi->image) }}" 
+                            class="rounded-circle object-cover" height="200px" width="200px" 
+                            alt="{{ $testi->name }}">
+                            <div class="card mt-n5 z-n1 pt-5 bg-green-normal-to-darker text-white fg-1">
+                                <div class="card-body mt-2 px-4">
+                                    <div class="card-text">
+                                        {!! nl2br($testi->testimonial) !!}
+                                    </div>
+                                    <h5 class="card-title mt-4 mb-0">{{ $testi->name }}</h5>
+                                    <small>{{ $testi->from }}</small>
                                 </div>
-								<br>
-								<span style="font-family:'Poppins', sans-serif;color:{{$testi->warna}};font-size:{{$testi->ukuran_mobile}};text-align:{{$testi->alignment}}"><strong>{{ $testi->name }}</strong></span>
-								<br>
-								<span style="font-family:'Poppins', sans-serif;color:{{$testi->warna}};font-size:{{$testi->ukuran_mobile}};text-align:{{$testi->alignment}}"><strong>{{ $testi->from }}</strong></span>
-                                <p style="font-family:'Poppins', sans-serif;color:{{$testi->warna}};font-size:{{$testi->ukuran_mobile}};text-align:{{$testi->alignment}}">
-								{!! nl2br($testi->testimonial) !!}
-                                </p>
-                                <!--span>- Jquileen</span-->
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                    <div class="swiper-nav swiper-nav--bottom-right" style="width: 120px">
+                        <div class="swiper-button-prev bg-transparent position-static w-auto">
+                            <div class="arrow arrow--left arrow--hover-green-lightning">
+                                <div class="line"></div>
+                                <div class="point"></div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next bg-transparent position-static w-auto">
+                            <div class="arrow arrow--hover-green-lightning">
+                                <div class="line"></div>
+                                <div class="point"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-			@endforeach
-            
-            
-        </div>
-    </div>
-    <!-- testimonial_area_end -->
-
-
-	<!-- tutor -->
-	
-	{{-- <div class="our_courses" id="tutor" style="padding-bottom:0px">
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-12">
-					<div class="section_title text-center mb-100">
-						<h3  style=" font-weight:bold">Belajar Seru Bareng<br>Master Tutor Volans Education</h3>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<!-- Swiper -->
-		  <div class="swiper-container swiper-container1 text-center" style="width:80%">
-			<div class="swiper-wrapper"  >
-				@foreach($tutors as $tutor)
-				<div class="swiper-slide">
-					<div class="author_img">
-						<img src="{{ url('images/'.$tutor->image.'?id='.$tutor->updated_at)}}" alt="" style="width:200px;height:200px;border-radius: 50%;">
-					</div>
-					<br>
-					<span style="font-family:'Poppins', sans-serif"><strong>{{ $tutor->name }}</strong></span>
-					<br>
-					<span style="font-family:'Poppins', sans-serif"><strong>{{ $tutor->field }}</strong></span>
-					<p style="margin-bottom:100px;font-family:'Poppins', sans-serif">
-					{{ $tutor->from }}
-					</p>
-				</div>
-				@endforeach
-			</div>
-			<!-- Add Pagination -->
-			<div class="swiper-pagination swiper-pagination1"></div>
-			<!-- Add Arrows -->
-			<div class="swiper-button-next swiper-button-next1"></div>
-			<div class="swiper-button-prev swiper-button-prev1"></div>
-		  </div>
-    </div> --}}
-	
-	<!-- tutr end -->
-
-    <!-- our_courses_start -->
-    <div class="our_courses" style="padding-bottom:0px">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="section_title text-center">
-                        <h3 style="font-weight:bold;">Kenapa Harus Memilih<br>Volans Education?</h3>
-                        <!--p>Your domain control panel is designed for ease-of-use and <br>
-                            allows for all aspects of your domains.
-                        </p-->
+        </section>
+    
+        <section id="our-tutor" class="py-3 position-relative">
+            <img src="{{ asset('images/pattern-dot.png') }}" alt="" width="140px"
+            class="pattern-bottom-left pattern-bottom-left--half-minus left-10" draggable="false">
+            <div class="container">
+                <h2 class="font-weight-bold text-center mb-5">
+                    Belajar Seru Bareng Master Tutor Volans Education
+                </h2>
+                <div class="swiper-container slider-arrow-pagination-three-slide pb-5" id="slider-tutor">
+                    <div class="swiper-wrapper align-items-stretch">
+                        @foreach($tutors as $tutor)
+                        <div class="swiper-slide h-auto d-flex flex-column align-items-center">
+                            <div class="author_img">
+                                <img src="{{ url('images/'.$tutor->image.'?id='.$tutor->updated_at)}}" alt="" width="200px" height="200px" class="rounded-circle">
+                            </div>
+                            <br>
+                            <span style="font-family:'Poppins', sans-serif">
+                                <strong>{{ $tutor->name }}</strong>
+                            </span>
+                            <br>
+                            <span style="font-family:'Poppins', sans-serif">
+                                <strong>{{ $tutor->field }}</strong>
+                            </span>
+                            <p style="margin-bottom:100px;font-family:'Poppins', sans-serif">
+                            {{ $tutor->from }}
+                            </p>
+                        </div>
+                        @endforeach
+                    </div>
+                    <div class="swiper-nav swiper-nav--bottom-right" style="width: 120px">
+                        <div class="swiper-button-prev bg-transparent position-static w-auto">
+                            <div class="arrow arrow--left arrow--hover-green-lightning">
+                                <div class="line"></div>
+                                <div class="point"></div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next bg-transparent position-static w-auto">
+                            <div class="arrow arrow--hover-green-lightning">
+                                <div class="line"></div>
+                                <div class="point"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+    </div>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="font-weight-bold text-center mb-5">
+                Kenapa Harus Memilih Volans Education?
+            </h2>
             <div class="row">
                 @foreach($advantages as $advantage)
-                <div class="col-xl-4 col-md-6 col-lg-6">
-                    <div class="text-center" style="padding:15px">
-                        <img style="width:100%" src="{{ url('advantage/'.$advantage->image)}}">
+                <div class="col-lg-6 px-1 @if(!$loop->last and 
+                $loop->iteration != count($advantages) - 1) mb-2 @endif">
+                    <div class="position-relative hide-overlay-on-hover">
+                        <img src="{{ asset('advantage/'.$advantage->image)}}" width="100%" height="250px" class="object-cover">
+                        <div class="overlay-content text-center text-white font-weight-bold">
+                            {{ $advantage->name }}
+                        </div>
+                        <div class="overlay overlay--black-point-5"></div>
                     </div>
                 </div>
                 @endforeach
             </div>
         </div>
-    </div>
-    <!-- our_courses_end -->
+    </section>
 
     <!-- subscribe_newsletter_Start -->
     

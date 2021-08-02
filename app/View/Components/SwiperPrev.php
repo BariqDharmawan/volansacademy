@@ -12,7 +12,7 @@ class SwiperPrev extends Component
      *
      * @return void
      */
-    public function __construct($icon, $height = '40px')
+    public function __construct($icon = null, $height = '40px')
     {
         $this->icon = $icon;
         $this->height = $height;

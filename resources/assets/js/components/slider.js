@@ -69,3 +69,30 @@ const sliderNumberPaginationThreeSlide = new Swiper('.slider-number-pagination-t
         },
     }
 })
+
+const sliderThreeContentArrowPagination = document.querySelectorAll('.slider-arrow-pagination-three-slide');
+
+sliderThreeContentArrowPagination.forEach((slider, i) => {
+    const sliderId = '#' + slider.id;
+    
+    const sliderArrowPaginationThreeSlide = new Swiper(sliderId, {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            speed: 500,
+            spaceBetween: 150,
+            navigation: {
+                nextEl: sliderId + ' .swiper-button-next',
+                prevEl: sliderId + ' .swiper-button-prev',
+            },
+            pagination: {
+                el: sliderId + " .swiper-pagination",
+                clickable: true,
+                bulletClass: 'swiper-pagination__arrow',
+                bulletActiveClass: 'swiper-pagination__arrow--active',
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (index + 1) + "</span>";
+                },
+            }
+        }
+    )
+})
