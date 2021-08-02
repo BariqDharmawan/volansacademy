@@ -1,0 +1,10 @@
+.form-inline-one-input {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .btn {
+        position: absolute;
+        right: .25rem;
+    }
+}

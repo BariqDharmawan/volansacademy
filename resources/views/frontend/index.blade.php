@@ -303,48 +303,28 @@
 
     <!-- subscribe_newsletter_Start -->
     
-    <div class="subscribe_newsletter d-none d-sm-block d-md-block d-lg-block" style="background-image:url(config/{{ str_replace(' ', '%20', $config['subscribe banner']) }})">
+    <section id="subscribe-newsletter" class="">
         <div class="container">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6">
-                    <div class="newsletter_text">
-                        <h3>Subscribe Volans</h3>
-                        <p style="font-family:'Poppins', sans-serif">Daftarkan emailmu untuk mendapatkan soal dan pembahasan materi UTBK-SBMPTN secara gratis dari Volans Education</p>
-                    </div>
+            <div class="row mx-n5 bg-black-doff p-5 text-white rounded">
+                <div class="col-lg-5 px-0">
+                    <h3>Subscribe Volans</h3>
+                    <p>
+                        Daftarkan emailmu untuk mendapatkan soal dan 
+                        pembahasan materi UTBK-SBMPTN secara gratis
+                        dari Volans Education
+                    </p>
                 </div>
-                <div class="col-xl-5 offset-xl-1 col-lg-6">
-                    <div class="newsletter_form">
-                        <h4>Masukkan email kamu di bawah ini :</h4>
-                        <form action="{{ route('subscribersstore') }}" class="newsletter_form">
-                            <input type="text" required name="email" placeholder="Enter your mail">
-                            <button type="submit">Submit</button>
-                        </form>
-                    </div>
-                </div>
+                <form action="{{ route('subscribersstore') }}" 
+                class="col-lg-7 px-0 form-inline-one-input">
+                    <input type="text" required name="email" 
+                    placeholder="Enter your mail" class="form-control-lg form-control" />
+                    <button type="submit" class="btn btn-warning">
+                        Submit
+                    </button>
+                </form>
             </div>
         </div>
-    </div>
-    <div class="subscribe_newsletter d-block d-sm-none d-md-none d-lg-none" style="background-image:url(config/{{ str_replace(' ', '%20', $config['subscribe banner hape']) }})">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6">
-                    <div class="newsletter_text">
-                        <h3>Subscribe Volans</h3>
-                        <p style="font-family:'Poppins', sans-serif">Daftarkan emailmu untuk mendapatkan soal dan pembahasan materi UTBK-SBMPTN secara gratis dari Volans Education</p>
-                    </div>
-                </div>
-                <div class="col-xl-5 offset-xl-1 col-lg-6">
-                    <div class="newsletter_form">
-                        <h4>Masukkan email kamu di bawah ini :</h4>
-                        <form action="{{ route('subscribersstore') }}" class="newsletter_form">
-                            <input type="text" required name="email" placeholder="Enter your mail">
-                            <button type="submit">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </section>
 
     <section id="latest-blog" class="py-5">
         <div class="container">

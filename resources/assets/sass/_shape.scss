@@ -21,7 +21,7 @@
 .line {
     margin-top: 8px;
     width: 90px;
-    background-color: $black;
+    background-color: $black-doff;
     height: 4px;
     float: left;
 }
@@ -31,6 +31,6 @@
     height: 0;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-left: 10px solid $black;
+    border-left: 10px solid $black-doff;
     float: right;
 }

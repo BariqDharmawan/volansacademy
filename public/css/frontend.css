@@ -17787,6 +17787,10 @@ body {
   color: #232323;
 }
 
+.bg-black-doff {
+  background-color: #232323;
+}
+
 .bg-green-light,
 .nav {
   background-color: #e7f2e8;
@@ -17884,6 +17888,11 @@ body {
 
 .mt-n5 {
   margin-top: -3rem;
+}
+
+.mx-n5 {
+  margin-left: -3rem;
+  margin-right: -3rem;
 }
 
 .mr-10 {
@@ -18151,5 +18160,16 @@ body {
 
 .hide-overlay-on-hover {
   cursor: pointer;
+}
+
+.form-inline-one-input {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.form-inline-one-input .btn {
+  position: absolute;
+  right: 0.25rem;
 }
 
