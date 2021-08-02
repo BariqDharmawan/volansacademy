@@ -337,11 +337,12 @@
                 <div class="swiper-container slider-number-pagination-three-slide positin-static swiper-pagination--bottom-container">
                     <div class="swiper-wrapper">
                         @foreach($blogs as $blog)
-                        <div class="swiper-slide px-3">
+                        <div class="swiper-slide h-auto px-3">
                             <div class="card h-full border-0 shadow">
                                 <img src="{{ asset('blog/'.$blog->featured_image) }}" class="card-img-top" alt="{{ $blog->title }}">
                                 <div class="card-body position-relative pt-5">
-                                    <time class="card-widget-date text-center">
+                                    <time class="card-widget-date text-center" 
+                                    datetime="{{ $blog->created_at }}">
                                         {{ $blog->created_at->format('d') }} <br>
                                         {{ $blog->created_at->format('M') }}
                                     </time>
