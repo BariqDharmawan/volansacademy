@@ -77,32 +77,8 @@
                     <div class="row justify-content-center flex-nowrap mx-0">
                         @foreach ($classes as $class)
                         <div class="col-lg-3 col-xl-4 
-                        @if($loop->iteration === 2) mx-xl-5 @endif">
-                            <div class="card h-full border-0 shadow">
-                                <img src="{{ asset('class/'.$class->banner) }}" 
-                                class="card-img-top" alt="">
-                                <div class="card-body text-left">
-                                    <h5 class="card-title mb-4">
-                                        {{ Str::words($class->name, 3) }}
-                                    </h5>
-                                    <ul>
-                                        <x-list-icon icon="calendar_today_black_24dp.svg" 
-                                        text="{{ $class->created_at->format('D, d M Y') }}" />
-                                        <x-list-icon icon="schedule_black_24dp.svg" 
-                                        text="{{ $class->created_at->format('H.i') }}" />
-                                        <x-list-icon icon="language_black_24dp.svg" 
-                                        text="Public" />
-                                        <x-list-icon icon="attach_money_black_24dp.svg" 
-                                        text="Rp. 3.500.000,-" />
-                                    </ul>
-                                </div>
-                                <div class="card-footer p-0 bg-transparent rounded-bottom overflow-hidden">
-                                    <a href="{{ route('subcourses', $class->id) }}" 
-                                        class="btn btn-warning w-100 rounded-0">
-                                        Click here for registration
-                                    </a>
-                                </div>
-                            </div>
+                            @if($loop->iteration === 2) mx-xl-5 @endif">
+                            @include('includes.sub-class', ['subclass' => $class])
                         </div>
                         @endforeach
                     </div>
