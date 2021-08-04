@@ -163,11 +163,10 @@
                             alt="{{ $story->name }}"/>
                             <div class="overlay overlay--black-point-3"></div>
                             <a href="javascript:void(0);" class="play-popup__btn"
-                            data-toggle="modal" 
-                            data-target="#play-popup-{{ Str::slug(
-                                strtolower($story->name)
-                            ) }}" 
-                            data-youtube-video="">
+                            data-fancybox data-type="iframe" 
+                            data-src="{{ Str::of($story->video)->replace(
+                                'watch?v=', 'embed/'
+                            ) }}?autoplay=1&origin={{ config('app.url') }}">
                                 <img src="{{ asset('images/btn-play.png') }}" 
                                 alt="" height="90px"/>
                             </a>
