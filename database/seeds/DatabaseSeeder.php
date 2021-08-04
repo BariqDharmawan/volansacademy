@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             VideoSeeder::class,
             TestimonialSeeder::class,
             TutorSeeder::class,
-            AdvantageSeeder::class
+            AdvantageSeeder::class,
+            SubclassSeeder::class
         ]);
     }
 }

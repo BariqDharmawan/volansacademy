@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ url('frontend/img/favicon.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/img/favicon.png')}}">
     {{-- <link rel="stylesheet" href="{{ url('frontend/edumark/css/responsive.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('css/frontend.css') }}">
     @stack('styles')

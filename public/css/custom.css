@@ -1463,8 +1463,7 @@ body {
   background-color: #232323;
 }
 
-.bg-green-light,
-.nav {
+.bg-green-light {
   background-color: #e7f2e8;
 }
 
@@ -1642,6 +1641,7 @@ body {
 }
 
 .swiper-nav {
+  min-width: 100px;
   display: flex;
   justify-content: space-between;
   position: absolute;
@@ -1774,6 +1774,10 @@ body {
 
 .arrow--left {
   transform: rotate(180deg);
+}
+
+.arrow--right {
+  transform: rotate(0deg);
 }
 
 .arrow--hover-green-lightning:hover .point {

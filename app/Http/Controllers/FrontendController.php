@@ -89,8 +89,11 @@ class FrontendController extends Controller
 	
 	public function courses()
     {
-		$classes = Clas::where('inactive', 0)->orderBy('created_at', 'asc')->get();
+		$classes = Clas::where('inactive', 0)->orderBy('created_at', 'asc')
+                ->with('subclasses')->has('subclasses')->get();
+        
 		$blogs = Blog::latest()->get();
+
 		return view('frontend.courses', compact('classes','blogs'));
     }
 	

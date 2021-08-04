@@ -1,0 +1,1 @@
+<div {{ $attributes->merge(['class' => 'swiper-pagination']) }}></div>

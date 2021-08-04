@@ -26,6 +26,7 @@
 
 .swiper {
     &-nav {
+        min-width: 100px;
         display: flex;
         justify-content: space-between;
         position: absolute;

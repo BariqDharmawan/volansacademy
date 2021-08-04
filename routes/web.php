@@ -2,33 +2,26 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+if (config('app.env') !== 'local') {
+    Route::get('/dump-autoload', function() {
+        $exitCode = Artisan::call('dump-autoload');
+        echo $exitCode;
+    });
+    Route::get('/clear-cache', function() {
+        $exitCode = Artisan::call('cache:clear');
+        echo $exitCode;
+    });
+    Route::get('/clear-config', function() {
+        $exitCode = Artisan::call('config:clear');
+        echo "config reset";
+    });
+    Route::get('/clear-view', function() {
+        $exitCode = Artisan::call('view:clear');
+        echo "view reset";
+    });
+}
 
-Route::get('/dump-autoload', function() {
-    $exitCode = Artisan::call('dump-autoload');
-    echo $exitCode;
-});
-Route::get('/clear-cache', function() {
-    $exitCode = Artisan::call('cache:clear');
-    echo $exitCode;
-});
-Route::get('/clear-config', function() {
-    $exitCode = Artisan::call('config:clear');
-    echo "config reset";
-});
-Route::get('/clear-view', function() {
-    $exitCode = Artisan::call('view:clear');
-    echo "view reset";
-});
+
 
 Route::get('/', 'FrontendController@index')->name('home');
 Route::get('/news', 'FrontendController@news')->name('news');

@@ -1,9 +1,9 @@
 <?php
 
-use App\Clas;
+use App\Subclass;
 use Illuminate\Database\Seeder;
 
-class ClassSeeder extends Seeder
+class SubclassSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,8 +12,8 @@ class ClassSeeder extends Seeder
      */
     public function run()
     {
-        factory(Clas::class, 9)->create()->each(function ($course){
-            $course->save();
+        factory(Subclass::class, 10)->create()->each(function ($subclass){
+            $subclass->save();
         });
     }
 }
