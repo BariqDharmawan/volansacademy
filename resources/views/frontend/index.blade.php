@@ -45,40 +45,18 @@
         class="pattern-bottom-left pattern-pb-5 left-0" draggable="false"/>
         <div class="container text-center">
             <x-head-section text="Program Belajar {{ config('app.name') }}" />
-            <div class="position-relative">
-                <div class="swiper-container slider-fifth-content text-center slider-nav-center-vertical slider-nav-outside-horizontal position-static">
-                    <ul class="nav flex-nowrap nav-pills swiper-wrapper nav-pills--dark-green-active" 
-                    id="categories-class-tab">
-                        @foreach ($categoriesClass as $category)
-                        <li class="swiper-slide nav-item d-flex align-items-center justify-content-center" role="presentation">
-                            <a class="nav-link text-black @if($loop->first) font-weight-bold active @endif" 
-                            id="pills-{{ Str::slug(strtolower($category->name)) }}-tab" 
-                            data-toggle="pill" href="#pills-{{ Str::slug(strtolower($category->name)) }}" role="tab"
-                            aria-controls="pills-{{ Str::slug(strtolower($category->name)) }}" aria-selected="@if($loop->first) true @else false @endif">
-                                {{ $category->name }}
-                            </a>
-                        </li>
-                        @endforeach
-                    </ul>
-                    @if (count($categoriesClass) > 5)
-                    <x-swiper-next class="bg-transparent" 
-                    icon="chevron_right_black_24dp.svg" />
-                    <x-swiper-prev class="bg-transparent" 
-                    icon="chevron_left_black_24dp.svg" />
-                    @endif
-                </div>
-            </div>
+            @include('includes.sub-class-category')
 
             <div class="tab-content" id="categories-class-tabContent">
-                @foreach ($categoriesClass as $category)
+                @foreach ($classes as $class)
                 <div class="tab-pane fade @if($loop->first) show active @endif"
-                id="pills-{{ Str::slug(strtolower($category->name)) }}" 
-                role="tabpanel" aria-labelledby="pills-{{ Str::slug(strtolower($category->name)) }}-tab">
+                id="pills-{{ Str::slug(strtolower($class->name)) }}" 
+                role="tabpanel" aria-labelledby="pills-{{ Str::slug(strtolower($class->name)) }}-tab">
                     <div class="row justify-content-center flex-nowrap mx-0">
-                        @foreach ($classes as $class)
+                        @foreach ($class->subclasses->take(3) as $subclass)
                         <div class="col-lg-3 col-xl-4 
                             @if($loop->iteration === 2) mx-xl-5 @endif">
-                            @include('includes.sub-class', ['subclass' => $class])
+                            @include('includes.sub-class')
                         </div>
                         @endforeach
                     </div>
@@ -99,7 +77,8 @@
                 <div class="col-lg-3">
                     <div class="card bg-transparent h-full border-0 shadow-none">
                         <div class="position-relative play-popup rounded overflow-hidden">
-                            <img src="{{ asset('blog/1.jpg') }}" class="card-img-top" 
+                            <img src="{{ asset('video/' . $story->image) }}" 
+                            class="card-img-top" 
                             alt="{{ $story->name }}"/>
                             <div class="overlay overlay--black-point-3"></div>
                             <a href="javascript:void(0);" class="play-popup__btn"

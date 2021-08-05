@@ -20,6 +20,7 @@ use App\Helper;
 use Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\NewsletterConfirmMail;
+use Illuminate\Database\Eloquent\Builder;
 use PHPUnit\TextUI\Help;
 
 class FrontendController extends Controller
@@ -66,7 +67,9 @@ class FrontendController extends Controller
 	
     public function index()
     {
-		$classes = Clas::where('inactive', 0)->take(3)->orderBy('created_at', 'asc')->get();
+		$classes = Clas::where('inactive', 0)->has('subclasses')
+                ->orderBy('created_at', 'asc')->get();
+        
 		$blogs = Blog::latest()->get();
 		$videos = Video::where('inactive', 0)->limit(4)->get();
 		$testimonials = Testimonial::latest()->get();
@@ -74,8 +77,8 @@ class FrontendController extends Controller
 		$banners = Banner::orderBy('created_at', 'asc')->get();
 		$advantages = Advantage::take(6)->get();
 
+        //this is static
         $companies = Helper::getJson('companies.json');
-
         $categoriesClass = Helper::getJson('category-class.json');
 
 		return view('frontend.index', compact('classes', 'blogs', 'videos', 'testimonials', 'tutors', 'banners', 'advantages', 'companies', 'categoriesClass'));
