@@ -1,4 +1,6 @@
-/**
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;
+
+700&display=swap);/**
  * Swiper 6.8.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
@@ -1495,6 +1497,10 @@ body {
 
 .text-not-italic {
   font-style: normal;
+}
+
+.text-poppins {
+  font-family: "Poppins", sans-serif;
 }
 
 .overflow-hidden {

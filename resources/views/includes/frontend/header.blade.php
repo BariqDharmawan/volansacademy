@@ -16,13 +16,13 @@
             ? 'active' : '' }} mr-4" link="{{ route('courses') }}">
                 Program
             </x-nav-link>
-            <x-nav-link link="{{ route('home') }}#alumni" class="mr-4">
+            <x-nav-link link="{{ route('home') }}#cerita-alumni" class="mr-4">
                 Alumni
             </x-nav-link>
-            <x-nav-link link="{{ route('home') }}#testimoni" class="mr-4">
+            <x-nav-link link="{{ route('home') }}#testimoni-kita" class="mr-4">
                 Testimoni
             </x-nav-link>
-            <x-nav-link link="{{ route('home') }}#tutor" class="mr-4">
+            <x-nav-link link="{{ route('home') }}#tutor-kita" class="mr-4">
                 Tutor
             </x-nav-link>
             <x-nav-link :is-hide-on-desktop="true" class="mr-4">

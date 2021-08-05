@@ -41,8 +41,7 @@
     </section>
 
     <section class="bg-green-light py-5 position-relative">
-        <img src="{{ asset('images/pattern-dot.png') }}" alt="" height="120px"
-        class="pattern-bottom-left pattern-pb-5 left-0" draggable="false"/>
+        <x-bg-section height="120px" class="pattern-pb-5 left-0" />
         <div class="container text-center">
             <x-head-section text="Program Belajar {{ config('app.name') }}" />
             @include('includes.sub-class-category')
@@ -51,7 +50,8 @@
                 @foreach ($classes as $class)
                 <div class="tab-pane fade @if($loop->first) show active @endif"
                 id="pills-{{ Str::slug(strtolower($class->name)) }}" 
-                role="tabpanel" aria-labelledby="pills-{{ Str::slug(strtolower($class->name)) }}-tab">
+                role="tabpanel" 
+                aria-labelledby="pills-{{ Str::slug(strtolower($class->name)) }}-tab">
                     <div class="row justify-content-center flex-nowrap mx-0">
                         @foreach ($class->subclasses->take(3) as $subclass)
                         <div class="col-lg-3 col-xl-4 
@@ -107,7 +107,7 @@
     </section>
 
     <div class="bg-white-to-green-light">
-        <section id="testimoni" class="py-3">
+        <section id="testimoni-kita" class="py-3">
             <div class="container">
                 <x-head-section text="Jadilah Pemenang Bersama Volans" />
     
@@ -118,7 +118,8 @@
                             <img src="{{ asset('images/' . $testi->image) }}" 
                             class="rounded-circle object-cover" height="200px" width="200px" 
                             alt="{{ $testi->name }}">
-                            <div class="card mt-n5 z-n1 pt-5 bg-green-normal-to-darker text-white fg-1">
+                            <div class="card mt-n5 z-n1 pt-5 bg-green-normal-to-darker 
+                            text-white fg-1">
                                 <div class="card-body mt-2 px-4">
                                     <div class="card-text">
                                         {!! nl2br($testi->testimonial) !!}
@@ -135,9 +136,8 @@
             </div>
         </section>
     
-        <section id="our-tutor" class="py-3 position-relative">
-            <img src="{{ asset('images/pattern-dot.png') }}" alt="" width="140px"
-            class="pattern-bottom-left pattern-bottom-left--half-minus left-10" draggable="false">
+        <section id="tutor-kita" class="py-3 position-relative">
+            <x-bg-section width="190px" class="pattern-bottom-left--half-minus left-10" />
             <div class="container">
                 <x-head-section text="Belajar Seru Bareng Master Tutor Volans Education" />
                 <div class="swiper-container slider-arrow-pagination-three-slide pb-5" id="slider-tutor">
@@ -148,14 +148,14 @@
                                 <img src="{{ asset('images/'.$tutor->image) }}" alt="" width="200px" height="200px" class="rounded-circle">
                             </div>
                             <br>
-                            <span style="font-family:'Poppins', sans-serif">
+                            <span class="text-poppins">
                                 <strong>{{ $tutor->name }}</strong>
                             </span>
                             <br>
-                            <span style="font-family:'Poppins', sans-serif">
+                            <span class="text-poppins">
                                 <strong>{{ $tutor->field }}</strong>
                             </span>
-                            <p style="margin-bottom:100px;font-family:'Poppins', sans-serif">
+                            <p class="text-poppins">
                                 {{ $tutor->from }}
                             </p>
                         </div>
