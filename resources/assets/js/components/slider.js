@@ -50,11 +50,38 @@ const sliderNumberPaginationFifthSlide = new Swiper('.slider-fifth-content', {
     },
 })
 
-const sliderNumberPaginationThreeSlide = new Swiper('.slider-number-pagination-three-slide', {
+const sliderNumberPaginationThreeSlide = new Swiper(
+    '.slider-number-pagination-three-slide', {
     slidesPerView: 3,
     slidesPerGroup: 3,
+    observer: true,
+    observeParents: true,
     speed: 500,
     spaceBetween: 40,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        bulletClass: 'swiper-pagination__number',
+        bulletActiveClass: 'swiper-pagination__number--active',
+        renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + 1) + "</span>";
+        },
+    }
+})
+
+const sliderNumberPaginationFourRowFourCol = new Swiper(
+    '.slider-number-pagination-four-row-four-col', {
+    slidesPerView: 4,
+    slidesPerColumn: 4,
+    slidesPerColumnFill: 'row',
+    observer: true,
+    observeParents: true,
+    speed: 500,
+    spaceBetween: 20,
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',

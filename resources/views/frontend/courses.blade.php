@@ -51,16 +51,18 @@
                     role="tabpanel" 
                     aria-labelledby="pills-{{ Str::slug(strtolower($class->name)) }}-tab">
                     <div class="position-relative">
-                        <div class="swiper-container slider-number-pagination-three-slide positin-static swiper-pagination--bottom-container" 
+                        <div class="swiper-container slider-number-pagination-four-row-four-col positin-static swiper-pagination--bottom-container" 
                         id="slider-class-{{ Str::slug(strtolower($class->name)) }}">
-                            <div class="swiper-wrapper">
+                            <div class="swiper-wrapper justify-content-center">
                                 @foreach ($class->subclasses as $subclass)
-                                <div class="swiper-slide h-auto px-3">
+                                <div class="swiper-slide h-auto">
                                     @include('includes.sub-class')
                                 </div>
                                 @endforeach
                             </div>
+                            @if (count($class->subclasses) > 16)
                             <x-swiper-pagination class="bottom-0"/>
+                            @endif
                         </div>
                     </div>
                 </div>
