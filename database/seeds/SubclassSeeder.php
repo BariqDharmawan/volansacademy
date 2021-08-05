@@ -12,7 +12,7 @@ class SubclassSeeder extends Seeder
      */
     public function run()
     {
-        factory(Subclass::class, 10)->create()->each(function ($subclass){
+        factory(Subclass::class, 40)->create()->each(function ($subclass){
             $subclass->save();
         });
     }
