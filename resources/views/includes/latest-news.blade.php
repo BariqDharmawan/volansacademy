@@ -28,7 +28,9 @@
                     </div>
                     @endforeach
                 </div>
+                @if (count($blogs) > 3)
                 <x-swiper-pagination class="bottom-0"/>
+                @endif
             </div>
         </div>
     </div>
