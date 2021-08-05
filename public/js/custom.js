@@ -12349,8 +12349,32 @@ var sliderNumberPaginationFifthSlide = new swiper__WEBPACK_IMPORTED_MODULE_0__["
 var sliderNumberPaginationThreeSlide = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider-number-pagination-three-slide', {
   slidesPerView: 3,
   slidesPerGroup: 3,
+  observer: true,
+  observeParents: true,
   speed: 500,
   spaceBetween: 40,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    bulletClass: 'swiper-pagination__number',
+    bulletActiveClass: 'swiper-pagination__number--active',
+    renderBullet: function renderBullet(index, className) {
+      return '<span class="' + className + '">' + (index + 1) + "</span>";
+    }
+  }
+});
+var sliderNumberPaginationFourRowFourCol = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider-number-pagination-four-row-four-col', {
+  slidesPerView: 4,
+  slidesPerColumn: 4,
+  slidesPerColumnFill: 'row',
+  observer: true,
+  observeParents: true,
+  speed: 500,
+  spaceBetween: 20,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'

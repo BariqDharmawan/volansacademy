@@ -17,4 +17,8 @@ mix.js('resources/assets/js/app.js', 'public/js')
         'public/frontend/edumark/css/animate.css',
         'public/css/custom.css',
     ], 'public/css/frontend.css')
-    .serve()
+    .serve();
+
+mix.browserSync({
+    proxy: 'localhost:8000'
+});
