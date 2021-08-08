@@ -24,6 +24,7 @@ $factory->define(Subclass::class, function (Faker $faker) {
         'thumbnail_video_alumni_testi_1' => $faker->randomElement(['1.jpg', '2.jpg']),
         'thumbnail_video_alumni_testi_2' => $faker->randomElement(['1.jpg', '2.jpg']),
         'banner_tagline' => $faker->randomElement(['1.jpg', '2.jpg']),
+        'gambar_aktifitas_belajar' => $faker->randomElement(['1.jpg', '2.jpg']),
         'icon' => $faker->randomElement(['1.jpg', '2.jpg']),
         'class_id' => mt_rand(1, 9),
         'name' => $faker->sentence(mt_rand(4, 7)),

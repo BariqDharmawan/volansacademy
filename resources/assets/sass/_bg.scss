@@ -2,6 +2,7 @@
     &-black-doff {
         background-color: $black-doff;
     }
+
     &-green {
         &-obvious {
             background-color: $green-obvious;
@@ -18,6 +19,7 @@
             );
         }
     }
+
     &-white {
         &-to-green-light {
             background: linear-gradient(
@@ -25,4 +27,15 @@
             );
         }
     }
+
+    &-purple {
+        &-to-orange {
+            background: linear-gradient(
+                182deg,
+                rgba(38,19,55,1) 62%,
+                rgba(201,121,9,1) 100%
+            );
+        }
+    }
+
 }

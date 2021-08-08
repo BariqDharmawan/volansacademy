@@ -137,68 +137,98 @@
         </div>
     </section>
 
-    <section class="popular_courses">
-        <div class="all_courses">
-            <div class="container">
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-							<div class="row justify-content-md-center">
-									{{-- @foreach($subclasses as $subclass)
-                                    <div class="col-xl-3 col-lg-3 col-md-3">
-                                        <div class="single_courses">
-                                            <div class="thumb" style="padding-bottom: 100%;position: relative;">
-												@if($subclass->external_link != "")
-													<a href="{{ $subclass->external_link }}">
-												@else
-													<a href="{{ route('course', $subclass->id) }}">
-												@endif
-                                                    <img src="{{ url('subclass/'.$subclass->id.'/'.$subclass->icon) }}" alt="" style="
-														position: absolute; 
-														top: 0;
-														bottom: 0;
-														left: 0;
-														right: 0; 
-														width: 100%; 
-														height: 100%; 
-														object-fit: cover; 
-														object-position: center;">
-                                                </a>
-                                            </div>
-                                            <div class="courses_info">
-                                                <!--span>{{ $subclass->periode }}</span-->
-												<center>
-												@if($subclass->external_link != "")
-													<a href="{{ $subclass->external_link }}"><h3 style="margin:0">{{ $subclass->name }}</h3><h6>{{ $subclass->sub_name }}</h6></a>
-												@else
-													<a href="{{ route('course', $subclass->id) }}"><h3 style="margin:0">{{ $subclass->name }}</h3><h6>{{ $subclass->sub_name }}</h6></a>
-												@endif
-                                                </center>
-												<div class="star_prise row-fluid">
-                                                    
-														<div class="prise text-center">
-															@if($subclass->price_discount > 0)
-																
-																<span class="offer" style="font-size:small;margin:0;color:darkred !important">{{ number_format($subclass->price) }}</span>
-																<span class="active_prise"  style="color:red;font-weight:bold">
-																	Rp. {{ number_format($subclass->price_discount) }} 
-																</span>
-																
-															@else
-															<span class="active_prise">
-																Rp. {{ number_format($subclass->price) }} 
-															</span>
-															@endif
-														</div>
-													
-                                                </div>
-												
-                                            </div>
-                                        </div>
-                                    </div>
-									@endforeach --}}
-                                   
-                                </div>
+    <section class="py-4 bg-green-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="rectangular-banner rectangular-banner--normal w-100 rounded mb-5"
+                    style="background-image: url(
+                        {{ asset('subclass/' . $subclass->banner_tagline) }}
+                    )"></div>
+                    
+                    {{-- data semetara --}}
+                    <div class="rectangular-banner rectangular-banner--normal w-100 rounded mb-5"
+                    style="background-image: url(
+                        {{ asset('subclass/' . $subclass->banner_tagline) }}
+                    )"></div>
+        
+                    {{-- data sementara --}}
+                    <div class="swiper-container slider-one-content-rounded-pagination text-center mb-5">
+                        <div class="swiper-wrapper">
+                            @for($i = 0; $i < 3; $i++)
+                            <div class="swiper-slide">
+                                <img src="{{ asset('subclass/1.jpg') }}" alt=""
+                                width="100%" height="350px" />
+                            </div>
+                            @endfor
+                        </div>
+                        
+                        <x-swiper-next icon="chevron_right_white_24dp.svg" />
+                        <x-swiper-prev icon="chevron_left_white_24dp.svg" />
+                        <x-swiper-pagination/>
                     </div>
+        
+                    <div class="rectangle-banner rectangle-banner--bigger w-100 rounded mb-5" 
+                    style="background-image: url(
+                        {{ asset('subclass/' . $subclass->gambar_aktifitas_belajar
+                    ) }})"></div>
+        
+                    {{-- data sementara --}}
+                    <div class="swiper-container slider-one-content-rounded-pagination text-center mb-5">
+                        <div class="swiper-wrapper">
+                            @for($i = 0; $i < 3; $i++)
+                            <div class="swiper-slide">
+                                <img src="{{ asset('subclass/1.jpg') }}" alt=""
+                                width="100%" height="600px" />
+                            </div>
+                            @endfor
+                        </div>
+                        
+                        <x-swiper-next icon="chevron_right_white_24dp.svg" />
+                        <x-swiper-prev icon="chevron_left_white_24dp.svg" />
+                        <x-swiper-pagination/>
+                    </div>
+        
+                    <div class="bg-purple-to-orange py-4 row mx-0 justify-content-center">
+                        <div>
+                            <p class="h4 text-white text-center">Akan ditutup dalam</p>
+                            <p class="text-center text-white">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                Molestias,assumenda.
+                            </p>
+
+                            {{-- data sementara --}}
+                            <div class="coutdown py-3 rounded shadow" 
+                            data-dateline="Jan 5, 2022 15:37:25">
+                                @include('includes.coutdown-el', [
+                                    'number' => 23,
+                                    'numberClass' => 'coutdown__day',
+                                    'unit' => 'Hari'
+                                ])
+                                @include('includes.coutdown-el', [
+                                    'number' => 5, 
+                                    'numberClass' => 'coutdown__hour',
+                                    'unit' => 'Jam'
+                                ])
+                                @include('includes.coutdown-el', [
+                                    'number' => 16, 
+                                    'numberClass' => 'coutdown__minute',
+                                    'unit' => 'Menit'
+                                ])
+                                @include('includes.coutdown-el', [
+                                    'number' => 45,
+                                    'numberClass' => 'coutdown__second',
+                                    'unit' => 'Detik'
+                                ])
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-10 mt-5">
+                    <a href="" class="btn btn-lg bg-green-dark text-white 
+                    py-3 w-100 mb-5 shadow-lg">
+                        DAFTAR SEKARANG
+                    </a>
                 </div>
             </div>
         </div>

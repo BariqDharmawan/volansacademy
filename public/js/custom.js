@@ -12249,6 +12249,42 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/assets/js/components/coutdown.js":
+/*!****************************************************!*\
+  !*** ./resources/assets/js/components/coutdown.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// Update the count down every 1 second
+var x = setInterval(function () {
+  // Get today's date and time
+  var now = new Date().getTime(); // Find the distance between now and the count down date
+
+  var datelines = document.querySelectorAll('.coutdown');
+  datelines.forEach(function (dateline) {
+    var countDownDate = new Date(dateline.dataset.dateline).getTime();
+    var distance = countDownDate - now; // Time calculations for days, hours, minutes and seconds
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor(distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+    var minutes = Math.floor(distance % (1000 * 60 * 60) / (1000 * 60));
+    var seconds = Math.floor(distance % (1000 * 60) / 1000); // Output the result in an element with id="demo"
+
+    dateline.querySelector('.coutdown__day').textContent = days;
+    dateline.querySelector('.coutdown__hour').textContent = hours;
+    dateline.querySelector('.coutdown__minute').textContent = minutes;
+    dateline.querySelector('.coutdown__second').textContent = seconds; // If the count down is over, write some text 
+
+    if (distance < 0) {
+      clearInterval(x);
+      dateline.textContent = "EXPIRED";
+    }
+  });
+}, 1000);
+
+/***/ }),
+
 /***/ "./resources/assets/js/components/fancybox.js":
 /*!****************************************************!*\
   !*** ./resources/assets/js/components/fancybox.js ***!
@@ -12426,11 +12462,14 @@ sliderThreeContentArrowPagination.forEach(function (slider, i) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/slider */ "./resources/assets/js/components/slider.js");
 /* harmony import */ var _components_fancybox__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/fancybox */ "./resources/assets/js/components/fancybox.js");
-/* harmony import */ var _components_popup_video__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/popup-video */ "./resources/assets/js/components/popup-video.js");
+/* harmony import */ var _components_coutdown__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/coutdown */ "./resources/assets/js/components/coutdown.js");
+/* harmony import */ var _components_coutdown__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_coutdown__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_popup_video__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/popup-video */ "./resources/assets/js/components/popup-video.js");
 
 
 
-_components_popup_video__WEBPACK_IMPORTED_MODULE_2__["autoPlayYouTubeModal"]();
+
+_components_popup_video__WEBPACK_IMPORTED_MODULE_3__["autoPlayYouTubeModal"]();
 
 /***/ }),
 
