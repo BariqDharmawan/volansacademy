@@ -3,3 +3,8 @@
     height: $size;
     border-radius: $rad;
 }
+
+@mixin sameSize($size) {
+    height: $size;
+    width: $size;
+}

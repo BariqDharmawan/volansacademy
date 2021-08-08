@@ -17,10 +17,11 @@ use App\Coupon;
 use App\Banner;
 use App\Advantage;
 use App\Helper;
-use Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\NewsletterConfirmMail;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use PHPUnit\TextUI\Help;
 
 class FrontendController extends Controller
@@ -41,17 +42,17 @@ class FrontendController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 	 
-	public function subscribersstore(Request $request){
+	public function subscribersStore(Request $request){
 		$mail = new NewsletterConfirmMail();
 		$mail->title = "Konfirmasi berlangganan Newsletter Volanseducation";
-		$mail->body = "Klik link ddibawah ini untuk berlangganan newsletter dari volanseducation.<br><a href='".route('subscribersstoreconfirm', $request->email)."'>Berlangganan</a><br>Abaikan jika anda tidak merasa melakukan permintaan berlangganan newsletter";
+		$mail->body = "Klik link ddibawah ini untuk berlangganan newsletter dari volanseducation.<br><a href='".route('subscribers-store-confirm', $request->email)."'>Berlangganan</a><br>Abaikan jika anda tidak merasa melakukan permintaan berlangganan newsletter";
 		$mail->subject = "Konfirmasi berlangganan Newsletter Volanseducation";
 		Mail::to($request->email)->send($mail);
 		
 		return view('frontend.subscribe');
 	}
 	
-	public function subscribersstoreconfirm(Request $request){
+	public function subscribersStoreConfirm(Request $request){
 		
 		//cek sudah ada atau belum, jika sudah ada tidak perlu insert.
 		$exist = Newsletter_email::where('email', $request->email)->count();
@@ -122,11 +123,10 @@ class FrontendController extends Controller
 		return view('frontend.blog', compact('blog','recentblogs','prevblog','nextblog'));
     }
 	
-	public function subcourses(Clas $class)
+	public function subcourses(Subclass $subclass)
     {
-		$subclasses =  Subclass::where('inactive', 0)->where('class_id', $class->id)->get();
 		$blogs = Blog::latest()->get();
-		return view('frontend.subcourses', compact('subclasses', 'class','blogs'));
+		return view('frontend.subcourses', compact('subclass','blogs'));
     }
 	
 	public function handlingnotif(Request $request)
@@ -520,7 +520,7 @@ class FrontendController extends Controller
 						], 200);
 					}
 
-					\DB::commit();
+					DB::commit();
 
 					
 					return response()->json([

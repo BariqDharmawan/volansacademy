@@ -3,6 +3,9 @@
         background-color: $black-doff;
     }
     &-green {
+        &-obvious {
+            background-color: $green-obvious;
+        }
         &-light {
             background-color: $green-light;
         }

@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 if (config('app.env') !== 'local') {
@@ -25,11 +27,11 @@ if (config('app.env') !== 'local') {
 
 Route::get('/', 'FrontendController@index')->name('home');
 Route::get('/news', 'FrontendController@news')->name('news');
-Route::get('/subscribersstore', 'FrontendController@subscribersstore')->name('subscribersstore');
-Route::get('/subscribersstoreconfirm/{email}', 'FrontendController@subscribersstoreconfirm')->name('subscribersstoreconfirm');
+Route::get('/subscribersstore', 'FrontendController@subscribersStore')->name('subscribersstore');
+Route::get('/subscribers-store-confirm/{email}', 'FrontendController@subscribersStoreConfirm')->name('subscribers-store-confirm');
 Route::get('/article/{blog}', 'FrontendController@article')->name('article');
 Route::get('/courses', 'FrontendController@courses')->name('courses');
-Route::get('/subcourses/{class}', 'FrontendController@subcourses')->name('subcourses');
+Route::get('/subcourses/{subclass}', 'FrontendController@subcourses')->name('subcourses');
 Route::get('/course/{subclass}', 'FrontendController@course')->name('course');
 
 Auth::routes(['verify' => true]);

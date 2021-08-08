@@ -2,6 +2,12 @@
 //     width: 90%;
 // }
 
+.flex-grow {
+    &-1 {
+        flex-grow: 1;
+    }
+}
+
 @media screen and (min-width: 1200px) {
     .container {
         max-width: 1200px;

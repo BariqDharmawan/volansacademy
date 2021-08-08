@@ -1,7 +1,9 @@
 <?php
 
+use App\Helper;
 use App\Subclass;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
 
 class SubclassSeeder extends Seeder
 {

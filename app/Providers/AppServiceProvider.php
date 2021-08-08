@@ -25,13 +25,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $datas = Configuration::all();
-		$config = [];
-		foreach($datas as $data){
-			$config[$data->name] = $data->value;
-		}
-        date_default_timezone_set('Asia/Jakarta');
-		View::share('config', $config);
+        try {
+            $datas = Configuration::all();
+            $config = [];
+            foreach($datas as $data){
+                $config[$data->name] = $data->value;
+            }
+            date_default_timezone_set('Asia/Jakarta');
+            View::share('config', $config);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
         //Validator::extend('recaptcha', 'App\\Validators\\ReCaptcha@validate');
     }
 }

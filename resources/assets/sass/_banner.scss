@@ -1,0 +1,43 @@
+%banner {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: block;
+    object-fit: cover;
+}
+
+.rectangular-banner {
+    height: 700px;
+    overflow: hidden;
+    @extend %banner;
+    
+    &--80vh {
+        height: 80vh;
+    }
+
+    &--small {
+        height: 200px;
+    }
+
+    &--normal {
+        height: 350px;
+    }
+}
+
+.rectangle-banner {
+    @extend %banner;
+    @include sameSize(350px);
+    max-width: 100%;
+
+    &-box {
+        width: 350px;
+    }
+
+    &--big {
+        @include sameSize(400px);
+
+        &ger {
+            @include sameSize(600px);
+        }
+    }
+}

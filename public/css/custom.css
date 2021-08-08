@@ -1450,11 +1450,16 @@ body.compensate-for-scrollbar {
     .fancybox-thumbs__list a {
         max-width: calc(100% - 10px);
     }
-}ul,
+}figure,
+ul,
 ol {
-  list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+ul,
+ol {
+  list-style-type: none;
 }
 
 body {
@@ -1463,6 +1468,10 @@ body {
 
 .bg-black-doff {
   background-color: #232323;
+}
+
+.bg-green-obvious {
+  background-color: #00845f;
 }
 
 .bg-green-light {
@@ -1512,7 +1521,7 @@ body {
 }
 
 .h-auto {
-  height: auto;
+  height: auto !important;
 }
 
 .w-auto {
@@ -1529,6 +1538,10 @@ body {
 
 .shadow-sm {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 }
 
 .top-0 {
@@ -1616,6 +1629,10 @@ body {
   text-decoration: underline;
   -webkit-text-decoration-color: currentColor;
           text-decoration-color: currentColor;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
 }
 
 @media screen and (min-width: 1200px) {
@@ -1853,5 +1870,52 @@ body {
 .form-inline-one-input .btn {
   position: absolute;
   right: 0.25rem;
+}
+
+.rectangle-banner,
+.rectangular-banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.rectangular-banner {
+  height: 700px;
+  overflow: hidden;
+}
+
+.rectangular-banner--80vh {
+  height: 80vh;
+}
+
+.rectangular-banner--small {
+  height: 200px;
+}
+
+.rectangular-banner--normal {
+  height: 350px;
+}
+
+.rectangle-banner {
+  height: 350px;
+  width: 350px;
+  max-width: 100%;
+}
+
+.rectangle-banner-box {
+  width: 350px;
+}
+
+.rectangle-banner--big {
+  height: 400px;
+  width: 400px;
+}
+
+.rectangle-banner--bigger {
+  height: 600px;
+  width: 600px;
 }
 

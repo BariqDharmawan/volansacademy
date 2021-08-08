@@ -1,7 +1,7 @@
 <nav class="nav bg-green-light">
     <div class="container d-flex align-items-center px-lg-0">
         <a href="{{ route('home') }}">
-            <img src="{{ url('frontend/img/logo.png')}}"  
+            <img src="{{ asset('frontend/img/logo.png')}}"  
             width="85px" alt="{{ config('app.name') }}">
         </a>
         <ul class="nav__menu ml-4">
@@ -9,7 +9,7 @@
             text-black mr-4" link="{{ route('home') }}">
                 Home
             </x-nav-link>
-            <x-nav-link 
+            <x-nav-link
             class="{{ request()->segment(1) == 'courses' 
             or request()->segment(1) == 'subcourses' 
             or request()->segment(1) == 'course'

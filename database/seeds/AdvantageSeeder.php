@@ -12,6 +12,7 @@ class AdvantageSeeder extends Seeder
      */
     public function run()
     {
+        
         factory(Advantage::class, 6)->create()->each(function ($advantage){
             $advantage->save();
         });

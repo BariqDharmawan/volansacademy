@@ -1,7 +1,9 @@
 <?php
 
+use App\Helper;
 use App\Video;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
 
 class VideoSeeder extends Seeder
 {

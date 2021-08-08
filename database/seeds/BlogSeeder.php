@@ -1,7 +1,9 @@
 <?php
 
 use App\Blog;
+use App\Helper;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
 
 class BlogSeeder extends Seeder
 {
