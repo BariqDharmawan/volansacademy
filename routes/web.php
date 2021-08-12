@@ -72,9 +72,10 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/class/subclass/chat/{subclass}', 'SubclassController@chat')->name('classes.subclasses.chat');	
 	Route::resource('subclasses.photos', 'PhotoController');
 	Route::resource('subclasses.chats', 'ChatController');
-	Route::resource('videos', 'VideoController');
+	Route::resource('cerita-alumni', 'CeritaAlumniController');
 	Route::resource('tutors', 'TutorController');
 	Route::resource('banners', 'BannerController');
 	Route::resource('advantages', 'AdvantageController');
 	Route::resource('configurations', 'ConfigurationController');
+	Route::resource('our-contact', 'OurContactController');
 });

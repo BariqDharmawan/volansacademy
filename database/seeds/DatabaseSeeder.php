@@ -20,7 +20,10 @@ class DatabaseSeeder extends Seeder
             TestimonialSeeder::class,
             TutorSeeder::class,
             AdvantageSeeder::class,
-            SubclassSeeder::class
+            SubclassSeeder::class,
+            RoleSeeder::class,
+            UserSeeder::class,
+            OurContactSeeder::class,
         ]);
     }
 }
