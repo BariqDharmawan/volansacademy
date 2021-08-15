@@ -31,6 +31,7 @@
                                 <th>No</th>
                                 <th>Contact name</th>
                                 <th>Value</th>
+                                <th>Link</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -39,12 +40,22 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $contact->name }}</td>
-                                <td>{{ $contact->value }}</td>
+                                <td>{{ Str::words($contact->value, 5) }}</td>
                                 <td>
-                                    <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-warning" data-toggle="modal" 
-                                    data-target="#{{ Str::slug($contact->name) }}">
+                                    <a href="{{ $contact->link }}" target="_blank">
+                                        {{ $contact->link }}
+                                    </a>
+                                </td>
+                                <td>
+                                    <button type="button" 
+                                    class="btn btn-warning" data-toggle="modal" 
+                                    data-target="#edit{{ Str::slug($contact->name) }}">
                                         Edit
+                                    </button>
+                                    <button type="button" 
+                                    class="btn btn-danger" data-toggle="modal" 
+                                    data-target="#delete{{ Str::slug($contact->name) }}">
+                                        Hapus
                                     </button>
                                 </td>
                             </tr>
@@ -57,7 +68,8 @@
     </div>
 </div>
 
-<div class="modal fade" id="addContact" tabindex="-1" aria-labelledby="addContactLabel" aria-hidden="true">
+<div class="modal fade" id="addContact" tabindex="-1" 
+aria-labelledby="addContactLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -80,39 +92,37 @@
 </div>
 
 @foreach ($contacts as $contact)
-<div class="modal fade" id="{{ Str::slug($contact->name) }}" tabindex="-1" aria-labelledby="{{ Str::slug($contact->name) }}Label" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="{{ Str::slug($contact->name) }}Label">
-                Edit kontak {{ $contact->name }}
-            </h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+    @component('includes.basic-modal', [
+        'id' => 'delete' . Str::slug($contact->name),
+        'bodyClass' => 'd-flex align-items-center justify-content-between',
+        'title' => 'Hapus kontak ' . $contact->name
+    ])
+        <p class="m-0">
+            Kamu yakin ingin menghapus kontak 
+            <strong>{{ $contact->name }}</strong>
+        </p>
+        <form action="{{ route('our-contact.destroy', $contact->id) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">
+                Hapus
             </button>
-            </div>
-            <div class="modal-body">
-                @include('pages.our-contact.form', [
-                    'action' => route('our-contact.update', $contact->id),
-                    'data' => $contact,
-                    'todo' => 'formEdit-' . $contact->id
-                ])
-            </div>
-        </div>
-    </div>
-</div>
+        </form>
+    @endcomponent
+
+    @component('includes.basic-modal', [
+        'id' => 'edit' . Str::slug($contact->name), 
+        'title' => 'Edit kontak ' . $contact->name
+    ])
+        @include('pages.our-contact.form', [
+            'action' => route('our-contact.update', $contact->id),
+            'data' => $contact,
+            'todo' => 'formEdit-' . $contact->id
+        ])
+    @endcomponent
 @endforeach
 
 @endsection
 
 @push('scripts')
-<script type="text/javascript">
-    $(function () {
-        $('.data-table').DataTable({
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Indonesian.json"
-            },
-        });
-    });
-</script>
 @endpush

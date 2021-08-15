@@ -15,15 +15,21 @@ class OurContactSeeder extends Seeder
         OurContact::insert([
             [
                 'name' => 'instagram', 
-                'value' => 'volansacademy'
+                'value' => 'volansacademy',
+                'platform' => 'instagram',
+                'link' => 'https://www.instagram.com/volansacademy',
             ],
             [
                 'name' => 'whatsapp', 
-                'value' => '89699505992'
+                'value' => '89699505992',
+                'platform' => 'whatsapp',
+                'link' => 'https://wa.me/6289699505992',
             ],
             [
                 'name' => 'alamat', 
-                'value' => 'Perum. City Home Regency, Blok F. No. 50 Jl. Keputih Tegal Timur, Sukolilo - Surabaya'
+                'value' => 'Perum. City Home Regency, Blok F. No. 50 Jl. Keputih Tegal Timur, Sukolilo - Surabaya',
+                'platform' => 'custom',
+                'link' => 'https://goo.gl/maps/tFzLZjPgB3LV2VNd6',
             ],
         ]);
     }

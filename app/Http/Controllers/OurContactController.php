@@ -20,16 +20,6 @@ class OurContactController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -37,32 +27,17 @@ class OurContactController extends Controller
      */
     public function store(OurContactValidation $request)
     {
-        OurContact::insert($request->validated());
+        dd($request->validated());
+        OurContact::create([
+            'name' => $request->name,
+            'value' => $request->value,
+            'link' => $request->link
+        ]);
+
+
         return redirect()->back()->with(
             'success', 'Berhasil tambah kontak ' . $request->name
         );
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\OurContact  $ourContact
-     * @return \Illuminate\Http\Response
-     */
-    public function show(OurContact $ourContact)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\OurContact  $ourContact
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(OurContact $ourContact)
-    {
-        //
     }
 
     /**
@@ -88,6 +63,10 @@ class OurContactController extends Controller
      */
     public function destroy(OurContact $ourContact)
     {
-        //
+        $contactWillBeDelete = $ourContact;
+        $ourContact->delete();
+        return redirect()->back()->with(
+            'success', 'Berhasil hapus kontak dengan nama ' . $contactWillBeDelete->name
+        );
     }
 }
