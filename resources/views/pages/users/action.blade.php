@@ -1,8 +1,7 @@
 <a class="btn btn-info pt-0 pb-0" href="{{ route('users.show',$user->id) }}">Detail</a>
-@can('user-edit')
+
 <a class="btn btn-primary pt-0 pb-0" href="{{ route('users.edit',$user->id) }}">Edit</a>
-@endcan
-@can('user-delete')
+
 <?php 
 if($user->id != auth()->user()->id){
 ?>
@@ -12,4 +11,3 @@ if($user->id != auth()->user()->id){
 <?php 
 }
 ?>
-@endcan

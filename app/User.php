@@ -5,12 +5,10 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
-	use HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -18,7 +16,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'phone', 'whatsapp', 'line_id', 'instagram_id', 'place_of_birth', 'date_of_birth', 'address', 'domicili', 'university', 'school', 'class', 'major', 'semester', 'jenis_kelamin'
+        'name', 'email', 'password', 'phone', 'whatsapp', 'line_id', 'instagram_id', 'place_of_birth', 'date_of_birth', 'address', 'domicili', 'university', 'school', 'class', 'major', 'semester', 'jenis_kelamin', 'role_id'
     ];
 
     /**
@@ -70,4 +68,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function canceledorders(){
 		return $this->hasMany(Order::class)->where('status', '=', 'canceled');
 	}
+
+    public function roles()
+    {
+        return $this->belongsTo('App\Role', 'role_id');
+    }
+
 }

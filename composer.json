@@ -17,7 +17,6 @@
         "laravel/ui": "^2.0",
         "laravelcollective/html": "^6.1",
         "midtrans/midtrans-php": "^2.3",
-        "spatie/laravel-permission": "^3.13",
         "yajra/laravel-datatables-oracle": "~9.0"
     },
     "require-dev": {
