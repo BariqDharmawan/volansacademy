@@ -39,31 +39,4 @@ class LoginController extends Controller
         }
 
     }
-
-    public function ceksignup(Request $request)
-    {
-        //cek sudah ada email terdaftar atau belum.
-        $exist = User::where('email', '=', $request->email)->first();
-        if($exist){
-            return response()->json([
-                'success' => false,
-                'message' => 'Email sudah terdaftar sebelumnya!'
-            ], 200);
-        }
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'password' => Hash::make($request->password),
-        ]);
-		
-		$user->assignRole('Siswa');
-
-        Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password]);
-
-		return response()->json([
-            'success' => true,
-            'message' => 'Berhasil mendaftar!'
-        ], 200);
-    }
 }
