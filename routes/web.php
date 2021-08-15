@@ -50,10 +50,10 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::resource('orders', 'OrderController');
 
     Route::middleware('is_super_admin')->group(function (){
-        Route::resource('users', 'UserController');
+        Route::resource('users', 'UserController')->except('create');
         Route::resource('roles', 'RoleController');
     });
-    
+
     Route::resource('cerita-alumni', 'CeritaAlumniController');
     Route::resource('tutors', 'TutorController');
     Route::resource('banners', 'BannerController');

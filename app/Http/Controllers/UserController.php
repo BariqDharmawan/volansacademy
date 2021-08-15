@@ -22,18 +22,9 @@ class UserController extends Controller
         return view('pages.users.index', ['users' => $users]);
     }
 
-    public function create()
-    {
-        $roles = Role::all();
-        return view('pages.users.create', compact('roles'));
-    }
-
     public function store(UserFormRequest $request)
     {
-        $input = $request->all();
-        $input['password'] = Hash::make($input['password']);
-
-        User::create($input);
+        User::create($request->validated());
 
         return redirect()->route('users.index')
             ->with('success', 'Pengguna Berhasil Dibuat');
@@ -53,14 +44,7 @@ class UserController extends Controller
 
     public function update(UserFormRequest $request, User $user)
     {
-        $input = $request->all();
-        if ($request->input('password') != null) {
-            $input['password'] = Hash::make($input['password']);
-        } else unset($input['password']);
-        $user->update($input);
-        $user->save();
-        $user->roles()->detach();
-        $user->assignRole($request->input('roles'));
+        $user->update($request->validated());
         return redirect()->route('users.index')
             ->with('success', 'Pengguna Berhasil Diperbarui');
     }

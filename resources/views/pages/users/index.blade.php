@@ -3,12 +3,11 @@
 @section('content')
 
     <x-head-page title="Pengguna">
-        <a href="{{ route('users.create') }}" class="btn btn-primary btn-icon-split">
-            <span class="icon text-white-50">
-                <i class="fas fa-plus"></i>
-            </span>
+        <button type="button" class="btn btn-primary" data-toggle="modal"
+        data-target="#add-user">
+            <i class="fas fa-plus"></i>
             <span class="text">Tambah Pengguna Baru</span>
-        </a>
+        </button>
     </x-head-page>
 
     <x-bootstrap-table>
@@ -39,11 +38,39 @@
         </tbody>
     </x-bootstrap-table>
 
+    <x-bootstrap-modal id="add-user" title="Tambah user">
+        <form action="{{ route('users.store') }}" method="POST" id="add-user">
+            @csrf
+            <x-bootstrap-input label="Nama" name="name" required />
+            <x-bootstrap-input label="Email" type="email" name="email" required />
+            <x-bootstrap-input label="Kata Sandi" type="password" 
+            name="password" required />
+            <x-bootstrap-input label="Konfirmasi Kata Sandi" name="password_confirmation" type="password" required />
+            
+            <div class="col-12">
+                <div class="form-group">
+                    <strong>Peran:</strong>
+                    <div class="row mx-0">
+                        <x-bootstrap-radio label="Superadmin" id="role-superadmin" name="role_id" value="1" required />
+                        <x-bootstrap-radio label="Admin" id="role-admin" name="role_id" value="2" required checked />
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">
+                <i class="fas fa-check"></i>
+                <span class="text">Kirim</span>
+            </button>
+        </form>
+    </x-bootstrap-modal>
+
 @endsection
 @push('scripts')
 <script type="text/javascript">
     $(function () {
         $('.data-table').DataTable();
+        @if($errors->any())
+            $("#add-user").modal('show');
+        @endif
     });
 </script>
 @endpush

@@ -1,11 +1,17 @@
 <div class="col-12">
     <div class="form-group">
         <strong>{{ $label }} : </strong>
-        {!! Form::text($name, null, array(
-                'placeholder' => $placeholder ?? $label,
-                'class' => 'form-control'
-            )) 
-        !!}
+        <input {{ $attributes->merge([
+            'class' => 'form-control',
+            'name' => $name,
+            'value' => old($name) ?? '',
+            'placeholder' => $placeholder ?? $label
+        ]) }}>
         {{ $slot }}
+        @error($name)
+        <div class="invalid-feedback">
+            {{ $message }}
+        </div>
+        @enderror
     </div>
 </div>
