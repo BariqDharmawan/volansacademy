@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Yajra\DataTables\Facades\DataTables;
 
-class VideoController extends Controller
+class CeritaAlumniController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +17,10 @@ class VideoController extends Controller
      */
     function __construct()
     {
-        $this->middleware('permission:video-list|video-create|video-edit|video-delete', ['only' => ['index', 'store']]);
-        $this->middleware('permission:video-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:video-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:video-delete', ['only' => ['destroy']]);
+        // $this->middleware('permission:video-list|video-create|video-edit|video-delete', ['only' => ['index', 'store']]);
+        // $this->middleware('permission:video-create', ['only' => ['create', 'store']]);
+        // $this->middleware('permission:video-edit', ['only' => ['edit', 'update']]);
+        // $this->middleware('permission:video-delete', ['only' => ['destroy']]);
     }
 
     public function index(Request $request)
@@ -30,18 +30,18 @@ class VideoController extends Controller
             return DataTables::of($videos)
                 ->addIndexColumn()
                 ->addColumn('action', function ($video) {
-                    $action = view('pages.videos.action', compact('video'));
+                    $action = view('pages.cerita-alumni.action', compact('video'));
                     return $action;
                 })
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('pages.videos.index');
+        return view('pages.cerita-alumni.index');
     }
 
     public function create()
     {
-		return view('pages.videos.create');
+		return view('pages.cerita-alumni.create');
     }
 
     public function store(VideoFormRequest $request)
@@ -67,18 +67,18 @@ class VideoController extends Controller
             $video->save();
         }
         
-        return redirect()->route('videos.index')
+        return redirect()->route('cerita-alumni')
             ->with('success', 'Video Berhasil Dibuat');
     }
 
     public function show(Video $video)
     {
-        return view('pages.videos.show', compact('video'));
+        return view('pages.cerita-alumni.show', compact('video'));
     }
 
     public function edit(Video $video)
     {
-        return view('pages.videos.edit', compact('video'));
+        return view('pages.cerita-alumni.edit', compact('video'));
     }
 
     public function update(VideoFormRequest $request, Video $video)
@@ -105,7 +105,7 @@ class VideoController extends Controller
 			$video->save();
         }
 		
-		return redirect()->route('videos.index')
+		return redirect()->route('cerita-alumni')
             ->with('success', 'Video Berhasil Diperbarui');
     }
 
@@ -120,7 +120,7 @@ class VideoController extends Controller
 				unlink(\base_path() . "/public/video/".$file2);	
 		}
 		
-        return redirect()->route('videos.index')
+        return redirect()->route('cerita-alumni')
             ->with('success', 'Video Berhasil Dihapus');
     }
 }
