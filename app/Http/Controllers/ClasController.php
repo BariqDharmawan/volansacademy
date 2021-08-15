@@ -10,18 +10,6 @@ use Yajra\DataTables\Facades\DataTables;
 
 class ClasController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    function __construct()
-    {
-        $this->middleware('permission:class-list|class-create|class-edit|class-delete', ['only' => ['index', 'store']]);
-        $this->middleware('permission:class-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:class-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:class-delete', ['only' => ['destroy']]);
-    }
 
     public function index(Request $request)
     {
