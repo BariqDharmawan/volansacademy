@@ -9,18 +9,6 @@ use Yajra\DataTables\Facades\DataTables;
 
 class AdvantageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    function __construct()
-    {
-        $this->middleware('permission:advantage-list|advantage-create|advantage-edit|advantage-delete', ['only' => ['index', 'store']]);
-        $this->middleware('permission:advantage-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:advantage-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:advantage-delete', ['only' => ['destroy']]);
-    }
 
     public function index(Request $request)
     {

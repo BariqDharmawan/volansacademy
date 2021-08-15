@@ -12,18 +12,6 @@ use Validator;
 
 class ChatController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    function __construct()
-    {
-        $this->middleware('permission:subclassalumnichat-list|subclassalumnichat-create|subclassalumnichat-edit|subclassalumnichat-delete', ['only' => ['index', 'store']]);
-        $this->middleware('permission:subclassalumnichat-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:subclassalumnichat-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:subclassalumnichat-delete', ['only' => ['destroy']]);
-    }
 
     public function index(Subclass $subclass, Request $request)
     {

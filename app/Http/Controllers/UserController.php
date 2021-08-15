@@ -5,54 +5,26 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserCreateRequest;
 use App\Http\Requests\UserFormRequest;
 use App\Http\Requests\UserUpdateRequest;
+use App\Role;
 use App\User;
 use App\Upgrade;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Spatie\Permission\Models\Role;
 use Yajra\DataTables\Facades\DataTables;
 use Config;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    function __construct()
-    {
-        $this->middleware('permission:user-list|user-create|user-edit|user-delete', ['only' => ['index', 'store']]);
-        $this->middleware('permission:user-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:user-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:user-delete', ['only' => ['destroy']]);
-    }
 
     public function index(Request $request)
     {
-        if ($request->ajax()) {
-            $users = User::latest()->get();
-            return Datatables::of($users)
-                ->addIndexColumn()
-                ->addColumn('roles', function ($user) {
-                    $roles = '';
-                    foreach ($user->getRoleNames() as $v)
-                        $roles .= '<label class="badge badge-success">' . $v . '</label>';
-                    return $roles;
-                })
-                ->addColumn('action', function ($user) {
-                    $action = view('pages.users.action', compact('user'));
-                    return $action;
-                })
-                ->rawColumns(['action', 'roles'])
-                ->make(true);
-        }
-        return view('pages.users.index');
+        $users = User::all();
+        return view('pages.users.index', ['users' => $users]);
     }
 
     public function create()
     {
-        $roles = Role::pluck('name', 'name')->all();
+        $roles = Role::all();
         return view('pages.users.create', compact('roles'));
     }
 
@@ -61,8 +33,7 @@ class UserController extends Controller
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
 
-        $user = User::create($input);
-        $user->assignRole($request->input('roles'));
+        User::create($input);
 
         return redirect()->route('users.index')
             ->with('success', 'Pengguna Berhasil Dibuat');

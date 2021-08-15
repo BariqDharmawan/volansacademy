@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Configuration;
+use App\OurContact;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -26,16 +27,16 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         try {
-            $datas = Configuration::all();
-            $config = [];
-            foreach($datas as $data){
-                $config[$data->name] = $data->value;
-            }
             date_default_timezone_set('Asia/Jakarta');
-            View::share('config', $config);
+
+            $contacts = OurContact::isAddress(false)->get();
+            $address = OurContact::isAddress(true)->first();
+
+            View::share('contacts', $contacts);
+            View::share('address', $address);
+
         } catch (\Throwable $th) {
             throw $th;
         }
-        //Validator::extend('recaptcha', 'App\\Validators\\ReCaptcha@validate');
     }
 }

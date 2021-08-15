@@ -12,18 +12,6 @@ use Validator;
 
 class SubclassController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    function __construct()
-    {
-        $this->middleware('permission:subclass-list|subclass-create|subclass-edit|subclass-delete', ['only' => ['index', 'store']]);
-        $this->middleware('permission:subclass-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:subclass-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:subclass-delete', ['only' => ['destroy']]);
-    }
 
     public function index(Clas $class, Request $request)
     {

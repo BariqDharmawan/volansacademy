@@ -13,18 +13,6 @@ use App\Mail\NewsletterMail;
 
 class NewsletterController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    function __construct()
-    {
-        $this->middleware('permission:newsletter-list|newsletter-create|newsletter-edit|newsletter-delete', ['only' => ['index', 'store']]);
-        $this->middleware('permission:newsletter-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:newsletter-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:newsletter-delete', ['only' => ['destroy']]);
-    }
 
     public function index(Request $request)
     {
@@ -90,7 +78,7 @@ class NewsletterController extends Controller
 			$mail->title = $newsletter->title;
 			$mail->body = $newsletter->body;
 			$mail->subject = $newsletter->title;
-			$mail->unsubscribe_link = route('newslettersunsubscribe', $recipient->email);
+			$mail->unsubscribe_link = route('newsletters.unsubscribe', $recipient->email);
 			Mail::to($recipient->email)->send($mail);
 		}
 			

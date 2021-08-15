@@ -10,18 +10,6 @@ use Config;
 
 class TestimonialController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    function __construct()
-    {
-        $this->middleware('permission:testimonial-list|testimonial-create|testimonial-edit|testimonial-delete', ['only' => ['index', 'store']]);
-        $this->middleware('permission:testimonial-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:testimonial-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:testimonial-delete', ['only' => ['destroy']]);
-    }
 
     public function index(Request $request)
     {

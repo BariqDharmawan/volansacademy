@@ -27,7 +27,6 @@ class OurContactController extends Controller
      */
     public function store(OurContactValidation $request)
     {
-        dd($request->validated());
         OurContact::create([
             'name' => $request->name,
             'value' => $request->value,

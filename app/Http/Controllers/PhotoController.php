@@ -12,18 +12,6 @@ use Validator;
 
 class PhotoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    function __construct()
-    {
-        $this->middleware('permission:subclassalumniphoto-list|subclassalumniphoto-create|subclassalumniphoto-edit|subclassalumniphoto-delete', ['only' => ['index', 'store']]);
-        $this->middleware('permission:subclassalumniphoto-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:subclassalumniphoto-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:subclassalumniphoto-delete', ['only' => ['destroy']]);
-    }
 
     public function index(Subclass $subclass, Request $request)
     {

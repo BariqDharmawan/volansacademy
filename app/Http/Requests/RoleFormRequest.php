@@ -25,13 +25,11 @@ class RoleFormRequest extends FormRequest
     {
         if ($this->getMethod() == 'POST') {
             return [
-                'name' => 'required|unique:roles,name',
-                // 'permission' => 'required',
+                'name' => ['required', 'unique:users'],
             ];
         } else if ($this->getMethod() == 'PATCH') {
             return [
-                'name' => 'required',
-                // 'permission' => 'required',
+                'name' => ['required'],
             ];
         }
     }

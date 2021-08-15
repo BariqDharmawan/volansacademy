@@ -25,19 +25,28 @@ class UserFormRequest extends FormRequest
     {
         $rules = [
             'name' => ['required', 'string', 'max:255'],
-            'roles' => ['required']
+            'role_id' => ['required']
         ];
+
         if ($this->getMethod() == 'POST') {
             $rules += [
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
-                'password' => ['required', 'string', 'min:8', 'same:confirm-password'],
+                'email' => [
+                    'required', 'string', 'email', 'max:255', 'unique:users,email'
+                ],
+                'password' => [
+                    'required', 'string', 'min:8', 'confirmed'
+                ],
             ];
         }
+
         if ($this->getMethod() == 'PATCH') {
             $rules += [
-                'password' => ['nullable', 'string', 'min:8', 'same:confirm-password'],
+                'password' => [
+                    'nullable', 'string', 'min:8', 'confirmed'
+                ],
             ];
         }
+
         return $rules;
     }
 }
