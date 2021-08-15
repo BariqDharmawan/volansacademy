@@ -17,6 +17,9 @@ class CreateOurContactsTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('value');
+            $table->text('link');
+            $table->boolean('is_address')->default(false);
+            $table->enum('platform', ['instagram', 'whatsapp', 'custom']);
             $table->timestamps();
         });
     }
