@@ -69,26 +69,21 @@
                             <h3 class="text-white mb-3">Address</h3>
                             <a class="link text-white">
                                 <address class="font-style-normal">
-                                    Perum. City Home Regency, Blok F. No. 50 Jl. Keputih Tegal Timur, Sukolilo - Surabaya
+                                    {{ $address->value }}
                                 </address>
                             </a>
                         </div>
                         <div>
                             <h3 class="text-white mb-3">Hubungi Kami</h3>
                             <ul>
+                                @foreach ($contacts as $contact)
                                 <li>
-                                    <a href="https://www.instagram.com/volanseducation" class="link text-white">
+                                    <a href="{{ $contact->link }}" class="link text-white">
                                         <i class="fa fa-instagram"></i>
-                                        <span>volans.education</span>
+                                        <span>{{ $contact->value }}</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="https://wa.me/6289699505992"
-                                    class="link text-white">
-                                        <i class="fa fa-whatsapp"></i>
-                                        <span>089699505992</span>
-                                    </a>
-                                </li>
+                                @endforeach
                                 <li>
                                     <a href="javascript:void(0);"
                                     class="link text-white" data-toggle="modal"

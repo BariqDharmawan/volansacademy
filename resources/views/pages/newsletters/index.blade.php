@@ -1,14 +1,11 @@
 @extends('layouts.admin')
 @section('title', 'newsletter')
 @section('content')
-<!-- Begin Page Content -->
-<div class="container-fluid">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-1">
         <h1 class="h5 mb-0 text-dark font-weight-bold">newsletter</h1>
     </div>
 
-    @can('class-create')
     <div class="card shadow mb-3">
         <div class="card-body">
             <a href="{{ route('newsletters.create') }}" class="btn btn-primary btn-icon-split">
@@ -25,7 +22,6 @@
             </a>
         </div>
     </div>
-    @endcan
 
     @if ($message = Session::get('success'))
     <div class="alert alert-success">
@@ -38,27 +34,18 @@
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered data-table">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Judul</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <th>No</th>
-                                <th>Judul</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </tfoot>
+                        @include('includes.thead', [
+                            'tds' => ['Judul', 'Aksi']
+                        ])
+                        @include('includes.thead', [
+                            'type' => 'tfoot',
+                            'tds' => ['Judul', 'Aksi']
+                        ])
                     </table>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- /.container-fluid -->
 @endsection
 @push('scripts')
 <script type="text/javascript">

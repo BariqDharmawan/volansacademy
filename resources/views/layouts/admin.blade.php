@@ -19,7 +19,9 @@
 		<div class="content-wrapper">
 		<!-- Main content -->
 		<section class="content">
-		@yield('content')
+            <div class="container-fluid py-3">
+                @yield('content')
+            </div>
 		</section>
 		</div>
 		@include('includes.footer')

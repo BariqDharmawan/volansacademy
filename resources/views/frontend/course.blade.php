@@ -62,7 +62,7 @@
 			@if($subclass->daftar_sekarang_1)
 			<div class="row no-gutters text-center">
 				<div class="col-md-12">
-					<button @auth class="btn" onclick="addToCart();" @else href="#login-form" class="btn login popup-with-form" @endauth style="width:75%; height: 9.225vw; background-color: {{$subclass->daftar_sekarang_1_warna_button}}; font-weight: bold; font-size:{{$subclass->daftar_sekarang_1_font}}vw;padding-top:1.25vw;margin-top:1.23vw;color:{{$subclass->daftar_sekarang_1_warna}};border-radius:100px">{!! $subclass->daftar_sekarang_1 !!}</button>
+					<button class="btn" style="width:75%; height: 9.225vw; background-color: {{$subclass->daftar_sekarang_1_warna_button}}; font-weight: bold; font-size:{{$subclass->daftar_sekarang_1_font}}vw;padding-top:1.25vw;margin-top:1.23vw;color:{{$subclass->daftar_sekarang_1_warna}};border-radius:100px">{!! $subclass->daftar_sekarang_1 !!}</button>
 				</div>
 			</div>
 			@endif
@@ -163,7 +163,7 @@
 			@if($subclass->daftar_sekarang_2)
 			<div class="row no-gutters text-center">
 				<div class="col-md-12">
-					<button @auth class="btn" onclick="addToCart();" @else href="#login-form" class="btn login popup-with-form" @endauth style="width:75%; height: 9.225vw; background-color: {{$subclass->daftar_sekarang_2_warna_button}}; font-weight: bold; font-size:{{$subclass->daftar_sekarang_2_font}}vw;padding-top:1.25vw;margin-top:1.23vw;color:{{$subclass->daftar_sekarang_2_warna}};border-radius:100px">{!! $subclass->daftar_sekarang_2 !!}</button>
+					<button class="btn" style="width:75%; height: 9.225vw; background-color: {{$subclass->daftar_sekarang_2_warna_button}}; font-weight: bold; font-size:{{$subclass->daftar_sekarang_2_font}}vw;padding-top:1.25vw;margin-top:1.23vw;color:{{$subclass->daftar_sekarang_2_warna}};border-radius:100px">{!! $subclass->daftar_sekarang_2 !!}</button>
 				</div>
 			</div>
 			@endif
@@ -245,7 +245,7 @@
 			@if( $subclass->daftar_sekarang_3)
 			<div class="row no-gutters text-center">
 				<div class="col-md-12">
-					<button @auth class="btn" onclick="addToCart();" @else href="#login-form" class="btn login popup-with-form" @endauth style="width:75%; height: 9.225vw; background-color: {{$subclass->daftar_sekarang_3_warna_button}}; font-weight: bold; font-size:{{$subclass->daftar_sekarang_3_font}}vw;padding-top:1.25vw;margin-top:1.23vw;color:{{$subclass->daftar_sekarang_3_warna}};border-radius:100px">{!! $subclass->daftar_sekarang_3 !!}</button>
+					<button class="btn" style="width:75%; height: 9.225vw; background-color: {{$subclass->daftar_sekarang_3_warna_button}}; font-weight: bold; font-size:{{$subclass->daftar_sekarang_3_font}}vw;padding-top:1.25vw;margin-top:1.23vw;color:{{$subclass->daftar_sekarang_3_warna}};border-radius:100px">{!! $subclass->daftar_sekarang_3 !!}</button>
 				</div>
 			</div>
 			@endif
@@ -305,7 +305,7 @@
 			@if($subclass->daftar_sekarang_1)
 			<div class="row no-gutters text-center">
 				<div class="col-md-12">
-					<button @auth class="btn" onclick="addToCart();" @else href="#login-form" class="btn login popup-with-form" @endauth style="width:66vw; height: 16vw; background-color: {{$subclass->daftar_sekarang_1_warna_button}}; font-weight: bold; font-size:{{$subclass->daftar_sekarang_1_font}}vw;padding-top:1.25vw;margin-top:1.23vw;color:{{$subclass->daftar_sekarang_1_warna}};border-radius:100px">{!! $subclass->daftar_sekarang_1 !!}</button>
+					<button class="btn" style="width:66vw; height: 16vw; background-color: {{$subclass->daftar_sekarang_1_warna_button}}; font-weight: bold; font-size:{{$subclass->daftar_sekarang_1_font}}vw;padding-top:1.25vw;margin-top:1.23vw;color:{{$subclass->daftar_sekarang_1_warna}};border-radius:100px">{!! $subclass->daftar_sekarang_1 !!}</button>
 				</div>
 			</div>
 			@endif
@@ -406,7 +406,7 @@
 			@if($subclass->daftar_sekarang_2)
 			<div class="row no-gutters text-center">
 				<div class="col-md-12">
-					<button @auth class="btn" onclick="addToCart();" @else href="#login-form" class="btn login popup-with-form" @endauth style="width:66vw; height: 16vw; background-color: {{$subclass->daftar_sekarang_2_warna_button}}; font-weight: bold; font-size:{{$subclass->daftar_sekarang_2_font}}vw;padding-top:1.25vw;margin-top:1.23vw;color:{{$subclass->daftar_sekarang_2_warna}};border-radius:100px">{!! $subclass->daftar_sekarang_2 !!}</button>
+					<button class="btn" style="width:66vw; height: 16vw; background-color: {{$subclass->daftar_sekarang_2_warna_button}}; font-weight: bold; font-size:{{$subclass->daftar_sekarang_2_font}}vw;padding-top:1.25vw;margin-top:1.23vw;color:{{$subclass->daftar_sekarang_2_warna}};border-radius:100px">{!! $subclass->daftar_sekarang_2 !!}</button>
 				</div>
 			</div>
 			@endif
@@ -488,7 +488,7 @@
 			@if( $subclass->daftar_sekarang_3)
 			<div class="row no-gutters text-center">
 				<div class="col-md-12">
-					<button @auth class="btn" onclick="addToCart();" @else href="#login-form" class="btn login popup-with-form" @endauth style="width:66vw; height: 16vw; background-color: {{$subclass->daftar_sekarang_3_warna_button}}; font-weight: bold; font-size:{{$subclass->daftar_sekarang_3_font}}vw;padding-top:1.25vw;margin-top:1.23vw;color:{{$subclass->daftar_sekarang_3_warna}};border-radius:100px">{!! $subclass->daftar_sekarang_3 !!}</button>
+					<button class="btn" style="width:66vw; height: 16vw; background-color: {{$subclass->daftar_sekarang_3_warna_button}}; font-weight: bold; font-size:{{$subclass->daftar_sekarang_3_font}}vw;padding-top:1.25vw;margin-top:1.23vw;color:{{$subclass->daftar_sekarang_3_warna}};border-radius:100px">{!! $subclass->daftar_sekarang_3 !!}</button>
 				</div>
 			</div>
 			@endif
@@ -565,79 +565,10 @@
 
 @endsection
 
-@section('component')
-    <!-- form itself end-->
-    <form id="buy-form" class="white-popup-block mfp-hide popup-form" method="POST" action="{{ route('buy') }}">
-        <div class="popup_box ">
-            <div class="popup_inner">
-                <h3>Buy Course</h3>
-                <form action="#">
-                    <div class="row">
-                        <div class="col-xl-12 col-md-12">
-							<!--span style="color:white">Email: </span><input type="email" id="email" name="email" title="Isi email pengguna lain jika hendak membeli course untuk pengguna lain" placeholder="Isi email pengguna lain jika hendak membeli course untuk pengguna lain"-->
-                        </div>
-						<div class="col-xl-6 col-md-6">
-							<span style="color:white">Kupon: <input type="text" id="discount" name="discount" placeholder="Isi dengan kupon untuk mendapat potongan harga" title="Isi dengan kupon untuk mendapat potongan harga">
-                        </div>
-						<div class="col-xl-6 col-md-6">
-							<button type="button" id="cekkupon" class="boxed_btn_orange">Gunakan kupon</button>
-                        </div>
-						<input type="hidden" id="subclass" name="subclass" value="{{ $subclass->id }}">
-						<input type="hidden" id="coupon" name="coupon" value="">
-                        <div class="col-xl-6" style="color:white">
-                            @if($subclass->price_discount > 0)
-								Harga : <span id="harga">{{ $subclass->price_discount }}</span>
-							@else
-								Harga : <span id="harga">{{ $subclass->price }}</span>
-							@endif
-                        </div>
-						<div class="col-xl-6" style="color:white">
-                            Potongan : <span id="potongan">0</span>
-                        </div>
-						<div class="col-xl-12" style="color:white">
-                            Total : <span id="total">@if($subclass->price_discount > 0)
-								{{ $subclass->price_discount }}
-							@else
-								{{ $subclass->price }}
-							@endif</span>
-                        </div>
-						<div class="col-xl-12">
-                            <button type="button" id="buycourse" class="boxed_btn_orange">Buy Course</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </form>
-    <!-- form itself end -->
-@endsection
-
 @push('scripts')
 <script src="@if(env('APP_ENV') != 'production'){{ env('MIDTRANS_ENDPOINT_SANDBOX') }} @else {{ env('MIDTRANS_ENDPOINT_PRD') }} @endif" data-client-key="@if(env('APP_ENV') != 'production'){{ env('MIDTRANS_CLIENT_KEY_SANDBOX') }} @else {{ env('MIDTRANS_CLIENT_KEY_PRD') }} @endif" ></script>
 <script>
-	function addToCart(){
-		$.ajax({
-			url: "{{ route('addToCart') }}",
-			dataType: "JSON",
-			data: {
-				'_token': "{{ csrf_token() }}",
-				'subclass_id': $("#subclass_id").val(),
-			},
-			method: "POST",
-			success: function(response){
-				//jika error
-				if(response.success != true){
-					swal("Gagal!", response.message, "error");
-				}else{
-					swal("Sukses!", response.message, "success");
-				}
-			},
-			error:function(response){
-				swal("Error!", "Server error!", "error");
-			}
-		});
-
-	}
+	
 	$(function () {
 		
 		// Set the date we're counting down to
@@ -683,75 +614,6 @@
 		var elmnt = document.getElementById("m_img_video_alumni_testi_1");
 		document.getElementById("m_iframe_video_alumni_testi_1").style.height = elmnt.offsetHeight+"px";
 		
-		$('#cekkupon').click(function(){
-			$.post("/cekkupon", {kupon: $("#discount").val(), _token: "{{ csrf_token() }}",}, function(data, status){
-					if(data != "0"){
-						alert('berhasil menggunakan kupon');
-						$("#potongan").html(data);
-						var finalprice = parseInt($("#harga").html()) - parseInt($("#potongan").html()); 
-						$("#total").html(finalprice);
-						$("#coupon").val($("#discount").val());
-					}else{
-						alert('kupon tidak valid');
-						$("#potongan").html(0);
-						var finalprice = parseInt($("#harga").html()) - parseInt($("#potongan").html()); 
-						$("#total").html(finalprice);
-						$("#coupon").val("");
-					}
-			  });
-		});
-
-		
-		$('#buycourse').click(function(){
-			$.post("/buy", {discount: $("#potongan").html(), price: $("#harga").html(), subclass_id: $("#subclass").val(), email: $("#email").val(), coupon: $("#coupon").val(), _token: "{{ csrf_token() }}",}, function(data, status){
-					if(data == "1"){
-						alert('email tidak valid');
-					}else if(data == "2"){
-						alert('kesalahan sistem dalam menyimpan data, mohon kontak sistem administrator');
-					}else if(data == "3"){
-						alert('kesalahan sistem dalam menyiapkan token pembayaran, mohon kontak sistem administrator');
-					}else if(data == "4"){
-						alert('kesalahan sistem dalam menyimpan id pembelian, mohon kontak sistem administrator');
-					}else{
-						$(".mfp-close").click();
-						snap.pay(data, {
-						  // Optional
-						  onSuccess: function(result){
-								$.post("/updatetransactionid", {pdf_url: result.pdf_url, status: result.transaction_status, order_id: result.order_id, transaction_id: result.transaction_id, _token: "{{ csrf_token() }}",}, function(data, status){
-									if(data == "1"){
-										alert('kesalahan sistem dalam menyimpan id transaksi, mohon kontak sistem administrator');
-										location.reload();
-									}else{
-										//alert(JSON.stringify(result, null, 2));
-										alert(result.status_message);
-										location.reload();
-									}
-								});
-								
-						  },
-						  // Optional
-						  onPending: function(result){
-								$.post("/updatetransactionid", {pdf_url: result.pdf_url, status: result.transaction_status, order_id: result.order_id, transaction_id: result.transaction_id, _token: "{{ csrf_token() }}",}, function(data, status){
-									if(data == "1"){
-										alert('kesalahan sistem dalam menyimpan id transaksi, mohon kontak sistem administrator');
-										location.reload();
-									}else{
-										//alert(JSON.stringify(result, null, 2));
-										alert(result.status_message);
-										location.reload();
-									}
-								});
-								
-						  },
-						  // Optional
-						  onError: function(result){
-								alert(result.status_message);
-								location.reload();
-						  }
-						});
-					}
-			  });
-		});
 	});
 </script>
 

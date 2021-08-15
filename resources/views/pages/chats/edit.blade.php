@@ -1,8 +1,7 @@
 @extends('layouts.admin')
 @section('title', 'Edit Chat Alumni Sub Class')
 @section('content')
-<!-- Begin Page Content -->
-<div class="container-fluid">
+
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-1">
         <h1 class="h5 mb-0 text-dark font-weight-bold">Edit Chat ALumni Sub Class {{$chat->name}}</h1>
@@ -59,7 +58,7 @@
         </div>
     </div>
     {!! Form::close() !!}
-</div>
+
 @endsection
 @push('scripts')
 <script type="text/javascript">

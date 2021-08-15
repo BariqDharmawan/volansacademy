@@ -1,8 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Edit Profile')
 @section('content')
-<!-- Begin Page Content -->
-<div class="container-fluid">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-1">
         <h1 class="h5 mb-0 text-dark font-weight-bold">Edit Profile {{$user->name}}</h1>
@@ -91,8 +89,8 @@
                 </div>
 				<div class="col-xs-12 col-sm-12 col-md-6">
                     <div class="form-group">
-                        <strong>Sekolah/Universitas:</strong>
-                        {!! Form::text('university', null, array(,'class' => 'form-control')) !!}
+                        {{-- <strong>Sekolah/Universitas:</strong>
+                        {!! Form::text('university', null, array(,'class' => 'form-control')) !!} --}}
                     </div>
                 </div>
 				<div class="col-xs-12 col-sm-12 col-md-6">
@@ -127,5 +125,4 @@
         </div>
     </div>
     {!! Form::close() !!}
-</div>
 @endsection

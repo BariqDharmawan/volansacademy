@@ -43,7 +43,7 @@
     </div>
     <div class="form-group" @if($todo == 'formEdit-' . $contact->id) id="custom-link-prefix-{{ $contact->id }}" @else id="custom-link-prefix-create" @endif 
         style="display: none">
-        <input type="text" class="form-control" name="link" 
+        <input type="url" class="form-control" name="link" 
         @if (isset($data) and $contact->platform == 'custom')
         value="{{ $contact->link }}" required @endif>
         @error('link')

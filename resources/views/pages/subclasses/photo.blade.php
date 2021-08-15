@@ -1,8 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Detail Class')
 @section('content')
-<!-- Begin Page Content -->
-<div class="container-fluid">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-1">
         <h1 class="h5 mb-0 text-dark font-weight-bold">Photo Alumni Sub Class {{$subclass->name}}</h1>
@@ -48,9 +46,6 @@
             </div>
         </div>
     </div>
-    
-    
-</div>
 @endsection
 @push('scripts')
 <script type="text/javascript">

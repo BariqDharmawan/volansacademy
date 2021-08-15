@@ -49,40 +49,8 @@
                         swal("Gagal!", response.message, "error");
                     }else{
                         swal("Sukses!", response.message, "success");
-                        //redirect to app
-                        window.location.reload();
-                    }
-                },
-                error:function(response){
-                    swal("Error!", response.message, "error");
-                }
-            });
-        }
-        function ceksignup(){
-            if($("#newConfirmPassword").val() != $("#newPassword").val()){
-                swal("Error!", "Password tidak cocok", "error");
-                return false;
-            }
-            $.ajax({
-                url: "{{ route('ceksignup') }}",
-                dataType: "JSON",
-                data: {
-                    '_token': "{{ csrf_token() }}",
-                    'email': $("#newEmail").val(),
-                    'name': $("#newName").val(),
-                    'confirm': $("#newConfirmPassword").val(),
-                    'password': $("#newPassword").val(),
-                    'phone': $("#newPhone").val(),
-                },
-                method: "POST",
-                success: function(response){
-                    //jika error
-                    if(response.success != true){
-                        swal("Gagal!", response.message, "error");
-                    }else{
-                        swal("Sukses!", response.message, "success");
-                        //redirect to app
-                        window.location.href = '{{ route("profile") }}';
+                        
+                        window.location = "{{ route('banners.index') }}"
                     }
                 },
                 error:function(response){

@@ -29,10 +29,6 @@
                 &nbsp;
             </x-nav-link>
             @auth
-            <x-nav-link class="login mr-4" 
-            link="{{ route('cart') }}" :is-hide-on-desktop="true">
-                Keranjang
-            </x-nav-link>
             <x-nav-link link="{{route('dashboard')}}" class="mr-4" :is-hide-on-desktop="true">
                 {{ auth()->user()->name }}
             </x-nav-link>

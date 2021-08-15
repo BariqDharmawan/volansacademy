@@ -1,8 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'subscriber')
 @section('content')
-<!-- Begin Page Content -->
-<div class="container-fluid">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-1">
         <h1 class="h5 mb-0 text-dark font-weight-bold">subscriber</h1>
@@ -43,8 +41,6 @@
             </div>
         </div>
     </div>
-</div>
-<!-- /.container-fluid -->
 @endsection
 @push('scripts')
 <script type="text/javascript">

@@ -1,8 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Edit Sub Class')
 @section('content')
-<!-- Begin Page Content -->
-<div class="container-fluid">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-1">
         <h1 class="h5 mb-0 text-dark font-weight-bold">Edit Sub Class {{$subclass->name}}</h1>
@@ -636,7 +634,6 @@
 		</div>
 	</div>
     {!! Form::close() !!}
-</div>
 @endsection
 @push('scripts')
 <script src="{{ url('AdminLTE/plugins/summernote/summernote-bs4.min.js')}}"></script>
