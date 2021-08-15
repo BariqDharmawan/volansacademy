@@ -1,15 +1,14 @@
 @extends('layouts.admin')
 @section('title', 'Detail video')
 @section('content')
-<!-- Begin Page Content -->
-<div class="container-fluid">
+
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-1">
         <h1 class="h5 mb-0 text-dark font-weight-bold">Detail video {{$video->name}}</h1>
     </div>
     <div class="card shadow mb-3">
         <div class="card-body">
-            <a href="{{ route('videos.index') }}" class="btn btn-secondary btn-icon-split">
+            <a href="{{ route('cerita-alumni.index') }}" class="btn btn-secondary btn-icon-split">
                 <span class="icon">
                     <i class="fas fa-arrow-left"></i>
                 </span>
@@ -31,8 +30,6 @@
             </div>
         </div>
     </div>
-    
-</div>
 @endsection
 @push('scripts')
 
