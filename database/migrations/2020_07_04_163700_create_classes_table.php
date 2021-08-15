@@ -18,6 +18,7 @@ class CreateClassesTable extends Migration
             $table->string('name');
 			$table->text('description');
 			$table->string('banner');
+            $table->string('external_link')->nullable();
 			$table->tinyInteger('inactive')->default(0);
 			$table->timestamps();
         });

@@ -44,6 +44,7 @@ class CreateSubclassesTable extends Migration
             $table->string('thumbnail_video_alumni_testi_2', 55);
             $table->string('gambar_aktifitas_belajar', 55);
             $table->string('banner_tagline');
+            $table->string('external_link')->nullable();
 			$table->tinyInteger('inactive')->default(0);
 			$table->timestamps();
         });
