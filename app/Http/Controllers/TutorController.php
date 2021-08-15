@@ -10,18 +10,6 @@ use Config;
 
 class TutorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    function __construct()
-    {
-        $this->middleware('permission:tutor-list|tutor-create|tutor-edit|tutor-delete', ['only' => ['index', 'store']]);
-        $this->middleware('permission:tutor-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:tutor-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:tutor-delete', ['only' => ['destroy']]);
-    }
 
     public function index(Request $request)
     {
