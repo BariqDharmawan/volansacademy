@@ -1,8 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Edit tutor')
 @section('content')
-<!-- Begin Page Content -->
-<div class="container-fluid">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-1">
         <h1 class="h5 mb-0 text-dark font-weight-bold">Edit tutor</h1>
@@ -40,30 +38,18 @@
     <div class="card shadow mb-3">
         <div class="card-body">
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Bidang:</strong>
-                        {!! Form::text('field', null, array('placeholder' => 'Mengajar bidang apa','class' => 'form-control mb-2')) !!}
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-6">
-                    <div class="form-group">
-                        <strong>Nama:</strong>
-                        {!! Form::text('name', null, array('placeholder' => 'Nama','class' => 'form-control mb-2')) !!}
-                    </div>
-                </div>
-				<div class="col-xs-12 col-sm-12 col-md-6">
-                    <div class="form-group">
-                        <strong>Dari:</strong>
-                        {!! Form::text('from', null, array('placeholder' => 'Dari sekolah','class' => 'form-control mb-2')) !!}
-                    </div>
-                </div>
+                <x-bootstrap-input label="Bidang" name="field" 
+                placeholder="Mengajar bidang apa?" />
+                <x-bootstrap-input label="Nama" name="name" />
+                <x-bootstrap-input label="Dari" name="from" 
+                placeholder="Asal sekolah / universitas" />
+                
 				<div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Gambar:</strong>
                         @if ($tutor->image != null)
                         <br>
-                        <img src="{{ url('/images/'.$tutor->image) }}" alt="Gambar Tutor" width="400px">
+                        <img src="{{ url('/images/'.$tutor->image) }}" alt="Gambar Tutor" height="200px">
                         <br>
 						@endif
 						<input type="file" name="image" id="upload_image" />
@@ -101,7 +87,6 @@
 		</div>
 	</div>
     {!! Form::close() !!}
-</div>
 @endsection
 
 @push('scripts')
