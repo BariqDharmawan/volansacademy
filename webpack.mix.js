@@ -16,8 +16,11 @@ mix.js('resources/assets/js/app.js', 'public/js')
         'public/frontend/edumark/css/gijgo.css',
         'public/frontend/edumark/css/animate.css',
         'public/css/custom.css',
-    ], 'public/css/frontend.css')
-    .serve();
+    ], 'public/css/frontend.css');
+
+mix.sass('resources/assets/sass/admin.scss', 'public/css');
+
+mix.serve();
 
 mix.browserSync({
     proxy: 'localhost:8000'
