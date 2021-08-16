@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Blog')
 @section('content')
-
     <x-head-page title="Blog">
         <a href="{{ route('blogs.create') }}" class="btn btn-primary">
             <i class="fas fa-plus mr-2"></i>
@@ -18,8 +17,8 @@
             'tds' => ['Judul', 'Aksi']
         ])
     </x-bootstrap-table>
-
 @endsection
+
 @push('scripts')
 <script type="text/javascript">
     $(function () {

@@ -1,17 +1,9 @@
 @extends('layouts.frontend')
 @section('title', 'Home')
 @section('content')
-
-    <!-- header-end -->
-    
-        <!-- bradcam_area_start -->
         <div class="bradcam_area breadcam_bg overlay2">
                 <h3>blog</h3>
             </div>
-            <!-- bradcam_area_end -->
-
-
-    <!--================Blog Area =================-->
     <section class="blog_area section-padding">
         <div class="container">
             <div class="row">
@@ -116,47 +108,6 @@
                             </form>
                         </aside>
 
-                        <!--aside class="single_sidebar_widget post_category_widget">
-                            <h4 class="widget_title">Category</h4>
-                            <ul class="list cat-list">
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Resaurant food</p>
-                                        <p>(37)</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Travel news</p>
-                                        <p>(10)</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Modern technology</p>
-                                        <p>(03)</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Product</p>
-                                        <p>(11)</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Inspiration</p>
-                                        <p>21</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Health Care (21)</p>
-                                        <p>09</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </aside-->
 
                         <aside class="single_sidebar_widget popular_post_widget">
                             <h3 class="widget_title">Recent Post</h3>
@@ -174,72 +125,6 @@
 							@endforeach
                             
                         </aside>
-                        <!--aside class="single_sidebar_widget tag_cloud_widget">
-                            <h4 class="widget_title">Tag Clouds</h4>
-                            <ul class="list">
-                                <li>
-                                    <a href="#">project</a>
-                                </li>
-                                <li>
-                                    <a href="#">love</a>
-                                </li>
-                                <li>
-                                    <a href="#">technology</a>
-                                </li>
-                                <li>
-                                    <a href="#">travel</a>
-                                </li>
-                                <li>
-                                    <a href="#">restaurant</a>
-                                </li>
-                                <li>
-                                    <a href="#">life style</a>
-                                </li>
-                                <li>
-                                    <a href="#">design</a>
-                                </li>
-                                <li>
-                                    <a href="#">illustration</a>
-                                </li>
-                            </ul>
-                        </aside-->
-
-
-                        <!--aside class="single_sidebar_widget instagram_feeds">
-                            <h4 class="widget_title">Instagram Feeds</h4>
-                            <ul class="instagram_row flex-wrap">
-                                <li>
-                                    <a href="#">
-                                        <img class="img-fluid" src="img/post/post_5.png" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img class="img-fluid" src="img/post/post_6.png" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img class="img-fluid" src="img/post/post_7.png" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img class="img-fluid" src="img/post/post_8.png" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img class="img-fluid" src="img/post/post_9.png" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img class="img-fluid" src="img/post/post_10.png" alt="">
-                                    </a>
-                                </li>
-                            </ul>
-                        </aside-->
 
 
                         <aside class="single_sidebar_widget newsletter_widget">

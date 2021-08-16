@@ -6,7 +6,7 @@
             <div class="col-lg-4">
                 <a href="#" class="d-block mb-4">
                     <img height="100px"
-                    src="{{ url('frontend/img/logo.png')}}" alt="">
+                    src="{{ asset('frontend/img/logo.png')}}" alt="{{ config('app.name') }}">
                 </a>
                 <p class="text-white m-0">
                     Volans Education adalah Bimbingan Belajar spesialis masuk Perguruan Tinggi Negeri yang fokus

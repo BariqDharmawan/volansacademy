@@ -9,7 +9,7 @@
                         <div class="popup_inner">
                             <div class="logo text-center">
                                 <a href="#">
-                                    <img style="width:150px" src="{{ url('frontend/img/logo.png')}}" alt="">
+                                    <img style="width:150px" src="{{ asset('frontend/img/logo.png')}}" alt="">
                                 </a>
                             </div>
                             

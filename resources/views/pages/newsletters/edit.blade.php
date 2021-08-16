@@ -77,7 +77,3 @@
 	
 </script>
 @endpush
-@push('styles')
-<!-- summernote -->
-<link href="{{ url('AdminLTE/plugins/summernote/summernote.min.css') }}" rel="stylesheet">
-@endpush
